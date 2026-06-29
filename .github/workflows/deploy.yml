@@ -16,14 +16,13 @@ jobs:
           node-version: '20'
 
       - run: npm install
-      - run: npx astro build
-        env:
-          NODE_OPTIONS: --max-old-space-size=4096
+      - run: npm run build
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=x-arsenalplus
-        continue-on-error: true
+          command: |
+            wrangler pages project create x-arsenalplus --production-branch=master 2>/dev/null || true
+            wrangler pages deploy dist --project-name=x-arsenalplus --branch=master

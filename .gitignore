@@ -10,3 +10,4 @@ dist/
 *.tsbuildinfo
 *.tmp
 报错.txt
+logs/
