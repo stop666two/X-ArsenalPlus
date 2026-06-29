@@ -22,7 +22,7 @@ const searchData = Buffer.from(JSON.stringify(
       <h1>🔍 搜索软件</h1>
       <div class="search-box">
         <input
-          id="search-input"
+          id="q"
           type="text"
           class="input"
           placeholder="输入软件名称、分类或标签..."
@@ -99,7 +99,7 @@ var DATA = JSON.parse(jsonStr);
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    var input = document.getElementById('search-input');
+    var input = document.getElementById('q');
     if (!input) return;
 
     var url = new URL(location.href);
