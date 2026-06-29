@@ -38,11 +38,8 @@ const searchIndex = allSoftware.map(s => ({
   </div>
 </BaseLayout>
 
-<script type="application/json" id="search-data">{JSON.stringify(searchIndex)}</script>
-
 <script is:inline>
-  var dataEl = document.getElementById('search-data');
-  var DATA = dataEl ? JSON.parse(dataEl.textContent || '[]') : [];
+var DATA = {JSON.stringify(searchIndex)};
 
   function match(item, query) {
     var q = query.toLowerCase();
