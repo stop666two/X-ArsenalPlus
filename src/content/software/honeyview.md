@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.bandisoft.com/honeyview/download/"
+      url: "https://www.bandisoft.com/honeyview/"
       type: "exe"
       size: "约 18 MB"
       recommended: true

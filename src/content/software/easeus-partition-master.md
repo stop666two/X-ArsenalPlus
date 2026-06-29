@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.easeus.com/partition-manager/download/"
+      url: "https://www.easeus.com/partition-manager/"
       type: "exe"
       size: "约 65 MB"
       recommended: true

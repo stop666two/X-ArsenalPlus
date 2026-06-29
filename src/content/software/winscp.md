@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://winscp.net/download/"
+      url: "https://winscp.net/eng/download.php"
       type: "exe"
       size: "约 12 MB"
       recommended: true

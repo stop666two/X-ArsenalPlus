@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://natron.fr/download/"
+      url: "https://github.com/NatronGitHub/Natron/releases/latest"
       type: "exe"
       size: "约 250 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://natron.fr/download/"
+      url: "https://github.com/NatronGitHub/Natron/releases/latest"
       type: "dmg"
       size: "约 300 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://natron.fr/download/"
+      url: "https://github.com/NatronGitHub/Natron/releases/latest"
       type: "deb"
       size: "约 280 MB"
       recommended: true

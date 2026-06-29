@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://mypaint.app/download/"
+      url: "https://github.com/mypaint/mypaint/releases/latest"
       type: "exe"
       size: "约 35 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://mypaint.app/download/"
+      url: "https://github.com/mypaint/mypaint/releases/latest"
       type: "dmg"
       size: "约 42 MB"
       recommended: true
   linux:
     - label: "官网下载 (AppImage)"
-      url: "https://mypaint.app/download/"
+      url: "https://github.com/mypaint/mypaint/releases/latest"
       type: "appimage"
       size: "约 38 MB"
       recommended: true

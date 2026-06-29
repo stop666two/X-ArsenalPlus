@@ -17,13 +17,13 @@ description: |
 downloads:
   macos:
     - label: "官网下载 (源码)"
-      url: "https://tmux.github.io/download/"
+      url: "https://github.com/tmux/tmux/releases/latest"
       type: "zip"
       size: "约 2 MB"
       recommended: true
   linux:
     - label: "官网下载 (源码)"
-      url: "https://tmux.github.io/download/"
+      url: "https://github.com/tmux/tmux/releases/latest"
       type: "zip"
       size: "约 2 MB"
       recommended: true

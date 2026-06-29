@@ -16,13 +16,13 @@ description: |
 downloads:
   macos:
     - label: "官网下载 (源码)"
-      url: "https://mutt.org/download/"
+      url: "https://gitlab.com/muttmua/mutt"
       type: "zip"
       size: "约 2 MB"
       recommended: true
   linux:
     - label: "官网下载 (源码)"
-      url: "https://mutt.org/download/"
+      url: "https://gitlab.com/muttmua/mutt"
       type: "zip"
       size: "约 2 MB"
       recommended: true

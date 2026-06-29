@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.chuyu.me/download/"
+      url: "https://github.com/Chuyu-Team/Dism-Multi-language/releases/latest"
       type: "exe"
       size: "约 8 MB"
       recommended: true

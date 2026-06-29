@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.ashampoo.com/backup/download"
+      url: "https://www.ashampoo.com/en-us/backup-2025"
       type: "exe"
       size: "约 65 MB"
       recommended: true

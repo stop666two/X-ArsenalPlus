@@ -22,9 +22,9 @@ downloads:
       size: "约 35 MB"
       recommended: true
   macos:
-    - label: "官网下载"
-      url: "https://todo.microsoft.com/download"
-      type: "dmg"
+    - label: "Mac App Store"
+      url: "https://apps.apple.com/app/id1274495053"
+      type: "macappstore"
       size: "约 45 MB"
       recommended: true
 download_count: 23400

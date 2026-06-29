@@ -17,7 +17,7 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://www.alfredapp.com/download/"
+      url: "https://www.alfredapp.com/"
       type: "dmg"
       size: "约 15 MB"
       recommended: true

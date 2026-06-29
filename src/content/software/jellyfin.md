@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://jellyfin.org/download/"
+      url: "https://jellyfin.org/"
       type: "exe"
       size: "约 65 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://jellyfin.org/download/"
+      url: "https://jellyfin.org/"
       type: "dmg"
       size: "约 80 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://jellyfin.org/download/"
+      url: "https://jellyfin.org/"
       type: "deb"
       size: "约 70 MB"
       recommended: true

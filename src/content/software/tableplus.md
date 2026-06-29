@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://tableplus.com/download/"
+      url: "https://tableplus.com/"
       type: "exe"
       size: "约 65 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://tableplus.com/download/"
+      url: "https://tableplus.com/"
       type: "dmg"
       size: "约 80 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://tableplus.com/download/"
+      url: "https://tableplus.com/"
       type: "deb"
       size: "约 70 MB"
       recommended: true

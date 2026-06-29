@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://dukto.olivierweissberg.com/download/"
+      url: "https://sourceforge.net/projects/dukto/"
       type: "exe"
       size: "约 8 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://dukto.olivierweissberg.com/download/"
+      url: "https://sourceforge.net/projects/dukto/"
       type: "dmg"
       size: "约 10 MB"
       recommended: true
   linux:
     - label: "官网下载 (AppImage)"
-      url: "https://dukto.olivierweissberg.com/download/"
+      url: "https://sourceforge.net/projects/dukto/"
       type: "appimage"
       size: "约 9 MB"
       recommended: true

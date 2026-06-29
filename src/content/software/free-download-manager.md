@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.freedownloadmanager.org/download/"
+      url: "https://www.freedownloadmanager.org/download.htm"
       type: "exe"
       size: "约 35 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.freedownloadmanager.org/download/"
+      url: "https://www.freedownloadmanager.org/download.htm"
       type: "dmg"
       size: "约 45 MB"
       recommended: true
   linux:
     - label: "官网下载 (deb)"
-      url: "https://www.freedownloadmanager.org/download/"
+      url: "https://www.freedownloadmanager.org/download.htm"
       type: "deb"
       size: "约 40 MB"
       recommended: true

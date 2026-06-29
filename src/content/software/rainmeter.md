@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.rainmeter.net/download/"
+      url: "https://www.rainmeter.net/"
       type: "exe"
       size: "约 12 MB"
       recommended: true

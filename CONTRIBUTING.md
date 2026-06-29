@@ -20,7 +20,7 @@ src/
 │   └── DownloadPanel.astro # 详情页下载面板
 ├── content/
 │   ├── config.ts      # Zod Schema（字段约束）
-│   └── software/      # 286 个 .md 数据文件
+│   └── software/      # 285 个 .md 数据文件
 ├── layouts/BaseLayout.astro  # 根模板（主题/回到顶部）
 ├── pages/             # 路由
 │   ├── index.astro    # /

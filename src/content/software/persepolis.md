@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://persepolisdm.github.io/download/"
+      url: "https://github.com/persepolisdm/persepolis/releases/latest"
       type: "exe"
       size: "约 25 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://persepolisdm.github.io/download/"
+      url: "https://github.com/persepolisdm/persepolis/releases/latest"
       type: "dmg"
       size: "约 30 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://persepolisdm.github.io/download/"
+      url: "https://github.com/persepolisdm/persepolis/releases/latest"
       type: "deb"
       size: "约 28 MB"
       recommended: true

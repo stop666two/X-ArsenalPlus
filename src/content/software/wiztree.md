@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.diskanalyzer.com/download/"
+      url: "https://www.diskanalyzer.com/"
       type: "exe"
       size: "约 6 MB"
       recommended: true

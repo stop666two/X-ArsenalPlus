@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.rarlab.com/download/"
+      url: "https://www.rarlab.com/download.htm"
       type: "exe"
       size: "约 5 MB"
       recommended: true

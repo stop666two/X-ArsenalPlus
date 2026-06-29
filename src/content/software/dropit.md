@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.dropitproject.com/download/"
+      url: "https://sourceforge.net/projects/dropit/files/latest/download"
       type: "exe"
       size: "约 6 MB"
       recommended: true

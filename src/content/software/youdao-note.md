@@ -16,13 +16,13 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://note.youdao.com/download/"
+      url: "https://note.youdao.com"
       type: "exe"
       size: "约 65 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://note.youdao.com/download/"
+      url: "https://note.youdao.com"
       type: "dmg"
       size: "约 80 MB"
       recommended: true

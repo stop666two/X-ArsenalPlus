@@ -17,7 +17,7 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://magnet.crowdcafe.com/download/"
+      url: "https://apps.apple.com/app/magnet/id441258766"
       type: "dmg"
       size: "约 12 MB"
       recommended: true

@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://ditto-cp.sourceforge.io/download/"
+      url: "https://github.com/sabrogden/Ditto/releases/latest"
       type: "exe"
       size: "约 8 MB"
       recommended: true

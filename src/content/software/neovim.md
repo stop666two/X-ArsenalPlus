@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://neovim.io/download/"
+      url: "https://github.com/neovim/neovim/releases/latest"
       type: "exe"
       size: "约 15 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://neovim.io/download/"
+      url: "https://github.com/neovim/neovim/releases/latest"
       type: "dmg"
       size: "约 20 MB"
       recommended: true
   linux:
     - label: "官网下载 (AppImage)"
-      url: "https://neovim.io/download/"
+      url: "https://github.com/neovim/neovim/releases/latest"
       type: "appimage"
       size: "约 18 MB"
       recommended: true

@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://openvpn.net/download/"
+      url: "https://openvpn.net/community-downloads/"
       type: "exe"
       size: "约 15 MB"
       recommended: true

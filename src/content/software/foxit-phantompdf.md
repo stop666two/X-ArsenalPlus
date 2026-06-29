@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.foxit.com/pdf-editor/download/"
+      url: "https://www.foxit.com/pdf-editor/"
       type: "exe"
       size: "约 250 MB"
       recommended: true

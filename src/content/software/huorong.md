@@ -16,7 +16,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.huorong.cn/download/"
+      url: "https://www.huorong.cn/"
       type: "exe"
       size: "约 12 MB"
       recommended: true

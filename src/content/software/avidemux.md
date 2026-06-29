@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://avidemux.sourceforge.net/download.html"
+      url: "https://sourceforge.net/projects/avidemux/"
       type: "exe"
       size: "约 25 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://avidemux.sourceforge.net/download.html"
+      url: "https://sourceforge.net/projects/avidemux/"
       type: "dmg"
       size: "约 30 MB"
       recommended: true
   linux:
     - label: "官网下载 (AppImage)"
-      url: "https://avidemux.sourceforge.net/download.html"
+      url: "https://sourceforge.net/projects/avidemux/"
       type: "appimage"
       size: "约 28 MB"
       recommended: true

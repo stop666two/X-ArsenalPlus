@@ -17,12 +17,12 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://getsharex.com/downloads/"
+      url: "https://github.com/ShareX/ShareX/releases/latest"
       type: "exe"
       size: "约 22 MB"
       recommended: true
     - label: "Microsoft Store"
-      url: "https://www.microsoft.com/store/apps/9NBLGGH4Z2PC"
+      url: "https://github.com/ShareX/ShareX/releases/latest"
       type: "msstore"
 download_count: 53200
 ---

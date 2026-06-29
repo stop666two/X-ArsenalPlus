@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.zerotier.com/download/"
+      url: "https://www.zerotier.com/"
       type: "exe"
       size: "约 12 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.zerotier.com/download/"
+      url: "https://www.zerotier.com//"
       type: "dmg"
       size: "约 15 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://www.zerotier.com/download/"
+      url: "https://www.zerotier.com//"
       type: "deb"
       size: "约 13 MB"
       recommended: true

@@ -16,19 +16,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://git-lfs.com/download/"
+      url: "https://github.com/git-lfs/git-lfs/releases/latest"
       type: "exe"
       size: "约 8 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://git-lfs.com/download/"
+      url: "https://github.com/git-lfs/git-lfs/releases/latest"
       type: "zip"
       size: "约 10 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://git-lfs.com/download/"
+      url: "https://github.com/git-lfs/git-lfs/releases/latest"
       type: "deb"
       size: "约 9 MB"
       recommended: true

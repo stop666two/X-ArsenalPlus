@@ -17,13 +17,13 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.claws-mail.org/download/"
+      url: "https://www.claws-mail.org/"
       type: "exe"
       size: "约 12 MB"
       recommended: true
   linux:
     - label: "官网下载"
-      url: "https://www.claws-mail.org/download/"
+      url: "https://www.claws-mail.org/"
       type: "deb"
       size: "约 14 MB"
       recommended: true

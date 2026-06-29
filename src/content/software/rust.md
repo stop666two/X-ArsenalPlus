@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.rust-lang.org/downloads/"
+      url: "https://www.rust-lang.org/tools/install"
       type: "exe"
       size: "约 130 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.rust-lang.org/downloads/"
+      url: "https://www.rust-lang.org/tools/install"
       type: "pkg"
       size: "约 160 MB"
       recommended: true
   linux:
     - label: "官网下载 (Shell脚本)"
-      url: "https://www.rust-lang.org/downloads/"
+      url: "https://www.rust-lang.org/tools/install"
       type: "zip"
       size: "约 140 MB"
       recommended: true

@@ -17,13 +17,13 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.easeus.com/data-recovery/download/"
+      url: "https://www.easeus.com/datarecoverywizardpro/"
       type: "exe"
       size: "约 65 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.easeus.com/data-recovery/download/"
+      url: "https://www.easeus.com/datarecoverywizardpro/"
       type: "dmg"
       size: "约 80 MB"
       recommended: true

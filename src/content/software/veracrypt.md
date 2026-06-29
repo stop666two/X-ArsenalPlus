@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.veracrypt.fr/download/"
+      url: "https://www.veracrypt.fr/en/Downloads.html"
       type: "exe"
       size: "约 8 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.veracrypt.fr/download/"
+      url: "https://www.veracrypt.fr/en/Downloads.html"
       type: "dmg"
       size: "约 10 MB"
       recommended: true
   linux:
     - label: "官网下载"
-      url: "https://www.veracrypt.fr/download/"
+      url: "https://www.veracrypt.fr/en/Downloads.html"
       type: "zip"
       size: "约 9 MB"
       recommended: true

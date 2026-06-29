@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.minitool.com/data-recovery/download/"
+      url: "https://www.minitool.com/data-recovery-software/"
       type: "exe"
       size: "约 70 MB"
       recommended: true

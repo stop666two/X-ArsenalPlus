@@ -16,19 +16,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://sylpheed.sraoss.jp/download/"
+      url: "https://sylpheed.sraoss.jp/en/download.html"
       type: "exe"
       size: "约 6 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://sylpheed.sraoss.jp/download/"
+      url: "https://sylpheed.sraoss.jp/en/download.html"
       type: "dmg"
       size: "约 8 MB"
       recommended: true
   linux:
     - label: "官网下载 (源码)"
-      url: "https://sylpheed.sraoss.jp/download/"
+      url: "https://sylpheed.sraoss.jp/en/download.html"
       type: "zip"
       size: "约 7 MB"
       recommended: true

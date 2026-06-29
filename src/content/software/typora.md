@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://typora.io/download"
+      url: "https://typora.io"
       type: "exe"
       size: "约 65 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://typora.io/download"
+      url: "https://typora.io"
       type: "dmg"
       size: "约 80 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://typora.io/download"
+      url: "https://typora.io"
       type: "deb"
       size: "约 70 MB"
       recommended: true

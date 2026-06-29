@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.wps.cn/download/"
+      url: "https://www.wps.com/download"
       type: "exe"
       size: "约 250 MB"
       recommended: true

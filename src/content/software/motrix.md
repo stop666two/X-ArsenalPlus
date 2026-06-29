@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://motrix.app/download/"
+      url: "https://github.com/agalwood/Motrix/releases/latest"
       type: "exe"
       size: "约 65 MB"
       recommended: true

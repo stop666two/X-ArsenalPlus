@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://potplayer.daum.net/download/"
+      url: "https://potplayer.tv/"
       type: "exe"
       size: "约 35 MB"
       recommended: true

@@ -16,19 +16,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://youtube-dl.org/downloads/"
+      url: "https://github.com/yt-dlp/yt-dlp/releases/latest"
       type: "zip"
       size: "约 2 MB"
       recommended: true
   macos:
-    - label: "官网下载"
-      url: "https://youtube-dl.org/downloads/"
+    - label: "yt-dlp (推荐fork)"
+      url: "https://github.com/yt-dlp/yt-dlp/releases/latest"
       type: "zip"
       size: "约 2 MB"
       recommended: true
   linux:
-    - label: "官网下载 (源码)"
-      url: "https://youtube-dl.org/downloads/"
+    - label: "yt-dlp (推荐fork)"
+      url: "https://github.com/yt-dlp/yt-dlp/releases/latest"
       type: "zip"
       size: "约 2 MB"
       recommended: true

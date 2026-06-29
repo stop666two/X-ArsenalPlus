@@ -17,7 +17,7 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://flexibits.com/fantastical/download"
+      url: "https://flexibits.com/fantastical"
       type: "dmg"
       size: "约 25 MB"
       recommended: true

@@ -21,7 +21,7 @@ X-ArsenalPlus/
 │   │   └── DownloadPanel.astro     # 详情页多平台下载面板
 │   ├── content/
 │   │   ├── config.ts               # Zod Schema + 内容集合定义
-│   │   └── software/               # 286 个软件 Markdown 数据文件
+│   │   └── software/               # 285 个软件 Markdown 数据文件
 │   ├── layouts/BaseLayout.astro    # 根 HTML 骨架（搜索索引嵌入）
 │   ├── pages/                      # 路由页面
 │   │   ├── index.astro             # 首页（最新 / 热门 / 标签云）
@@ -46,7 +46,7 @@ X-ArsenalPlus/
 
 ## 功能
 
-- **286 款软件**，覆盖 **20 个分类**（每个软件可归属 1-3 个分类）
+- **285 款软件**，覆盖 **20 个分类**（每个软件可归属 1-3 个分类）
 - **独立搜索页**：/search/ 全量即时搜索，URL 实时同步
 - **多维度筛选**：按分类、平台、标签筛选，4 种排序，每页 24 条分页
 - **暗色/亮色主题**：Header 一键切换，localStorage 记忆
@@ -90,7 +90,7 @@ X-ArsenalPlus/
 | 框架 | [Astro 5](https://astro.build) | 静态站点生成，`output: 'static'` |
 | 语言 | TypeScript 5.7 | 严格模式类型检查 |
 | 样式 | 纯 CSS | 深色主题（GitHub 风格），CSS 自定义属性 |
-| 内容 | Markdown + Zod | 286 个 `.md` 文件，Zod Schema 校验 |
+| 内容 | Markdown + Zod | 285 个 `.md` 文件，Zod Schema 校验 |
 | 搜索 | 内嵌 JSON（base64） | 构建时编码，客户端 atob+TextDecoder 解码 |
 | 部署 | 静态托管 | 纯 HTML/CSS/JS，零服务端依赖 |
 

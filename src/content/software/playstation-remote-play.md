@@ -17,13 +17,13 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://remoteplay.dl.playstation.net/remoteplay/lang/cn/"
+      url: "https://remoteplay.dl.playstation.net/remoteplay/lang/en/"
       type: "exe"
       size: "约 65 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://remoteplay.dl.playstation.net/remoteplay/lang/cn/"
+      url: "https://remoteplay.dl.playstation.net/remoteplay/lang/en/"
       type: "dmg"
       size: "约 80 MB"
       recommended: true

@@ -17,7 +17,7 @@ description: |
 downloads:
   linux:
     - label: "官网下载"
-      url: "https://krusader.org/download/"
+      url: "https://krusader.org/get-krusader/"
       type: "deb"
       size: "约 25 MB"
       recommended: true

@@ -16,19 +16,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.cgsecurity.org/wiki/PhotoRec_Download"
+      url: "https://www.cgsecurity.org/wiki/TestDisk_Download"
       type: "zip"
       size: "约 8 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.cgsecurity.org/wiki/PhotoRec_Download"
+      url: "https://www.cgsecurity.org/wiki/TestDisk_Download"
       type: "zip"
       size: "约 10 MB"
       recommended: true
   linux:
     - label: "官网下载 (源码)"
-      url: "https://www.cgsecurity.org/wiki/PhotoRec_Download"
+      url: "https://www.cgsecurity.org/wiki/TestDisk_Download"
       type: "zip"
       size: "约 9 MB"
       recommended: true

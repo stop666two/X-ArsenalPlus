@@ -17,13 +17,13 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://affinity.serif.com/photo/download/"
+      url: "https://affinity.serif.com/photo/"
       type: "exe"
       size: "约 250 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://affinity.serif.com/photo/download/"
+      url: "https://affinity.serif.com/photo/"
       type: "dmg"
       size: "约 300 MB"
       recommended: true

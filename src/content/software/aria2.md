@@ -16,19 +16,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://aria2.github.io/download/"
+      url: "https://github.com/aria2/aria2/releases/latest"
       type: "zip"
       size: "约 6 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://aria2.github.io/download/"
+      url: "https://github.com/aria2/aria2/releases/latest"
       type: "zip"
       size: "约 8 MB"
       recommended: true
   linux:
     - label: "官网下载 (源码)"
-      url: "https://aria2.github.io/download/"
+      url: "https://github.com/aria2/aria2/releases/latest"
       type: "zip"
       size: "约 7 MB"
       recommended: true

@@ -6,7 +6,7 @@ platforms: ["windows", "linux"]
 tags: ["virtualization", "vm", "freeware"]
 size_summary: "约 200-400 MB"
 developer: "VMware Inc."
-website: "https://www.vmware.com/products/workstation-player/"
+website: "https://www.vmware.com/products/desktop-hypervisor.html"
 icon: "https://www.vmware.com/favicon.ico"
 screenshots: []
 safe_status: "verified"
@@ -17,13 +17,13 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.vmware.com/products/workstation-player/"
+      url: "https://www.vmware.com/products/desktop-hypervisor.html"
       type: "exe"
       size: "约 250 MB"
       recommended: true
   linux:
     - label: "官网下载 (.bundle)"
-      url: "https://www.vmware.com/products/workstation-player/"
+      url: "https://www.vmware.com/products/desktop-hypervisor.html"
       type: "zip"
       size: "约 280 MB"
       recommended: true

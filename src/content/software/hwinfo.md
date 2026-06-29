@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.hwinfo.com/download/"
+      url: "https://www.hwinfo.com/"
       type: "exe"
       size: "约 15 MB"
       recommended: true

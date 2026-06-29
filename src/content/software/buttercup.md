@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://buttercup.pw/download/"
+      url: "https://github.com/buttercup/buttercup-desktop/releases/latest"
       type: "exe"
       size: "约 60 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://buttercup.pw/download/"
+      url: "https://github.com/buttercup/buttercup-desktop/releases/latest"
       type: "dmg"
       size: "约 75 MB"
       recommended: true
   linux:
     - label: "官网下载 (AppImage)"
-      url: "https://buttercup.pw/download/"
+      url: "https://github.com/buttercup/buttercup-desktop/releases/latest"
       type: "appimage"
       size: "约 65 MB"
       recommended: true

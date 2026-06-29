@@ -22,7 +22,7 @@ downloads:
       size: "约 6 MB"
       recommended: true
     - label: "Microsoft Store"
-      url: "https://www.microsoft.com/store/apps/9N3N0ZJ4N9J6"
+      url: "https://github.com/NickeManarin/ScreenToGif/releases/latest"
       type: "msstore"
 download_count: 28900
 ---

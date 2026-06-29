@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.haskell.org/platform/download/"
+      url: "https://www.haskell.org/downloads/"
       type: "exe"
       size: "约 250 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.haskell.org/platform/download/"
+      url: "https://www.haskell.org/downloads/"
       type: "dmg"
       size: "约 300 MB"
       recommended: true
   linux:
     - label: "官网下载 (源码)"
-      url: "https://www.haskell.org/platform/download/"
+      url: "https://www.haskell.org/downloads/"
       type: "zip"
       size: "约 280 MB"
       recommended: true

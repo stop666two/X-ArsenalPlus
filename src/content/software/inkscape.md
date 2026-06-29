@@ -15,19 +15,19 @@ description: "Inkscape 是由 Inkscape 社区维护的专业级开源矢量图�
 downloads:
   windows:
     - label: "官方下载"
-      url: "https://inkscape.org/gallery/item/inkscape-1.4-x64.exe"
+      url: "https://inkscape.org/"
       type: "exe"
       size: "86 MB"
       recommended: true
   macos:
     - label: "官方下载"
-      url: "https://inkscape.org/gallery/item/inkscape-1.4-arm64.dmg"
+      url: "https://inkscape.org/"
       type: "dmg"
       size: "98 MB"
       recommended: true
   linux:
     - label: "官方下载"
-      url: "https://inkscape.org/gallery/item/inkscape-1.4-x86_64.deb"
+      url: "https://inkscape.org/"
       type: "deb"
       size: "75 MB"
 download_count: 25600

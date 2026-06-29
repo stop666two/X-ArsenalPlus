@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://krita.org/download/"
+      url: "https://krita.org/"
       type: "exe"
       size: "约 130 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://krita.org/download/"
+      url: "https://krita.org/"
       type: "dmg"
       size: "约 160 MB"
       recommended: true
   linux:
     - label: "官网下载 (AppImage)"
-      url: "https://krita.org/download/"
+      url: "https://krita.org/"
       type: "appimage"
       size: "约 140 MB"
       recommended: true

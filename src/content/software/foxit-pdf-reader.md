@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.foxit.com/pdf-reader/download/"
+      url: "https://www.foxit.com/pdf-reader/"
       type: "exe"
       size: "约 120 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.foxit.com/pdf-reader/download/"
+      url: "https://www.foxit.com/pdf-reader/"
       type: "dmg"
       size: "约 150 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://www.foxit.com/pdf-reader/download/"
+      url: "https://www.foxit.com/pdf-reader/"
       type: "deb"
       size: "约 130 MB"
       recommended: true

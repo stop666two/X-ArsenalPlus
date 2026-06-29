@@ -17,7 +17,7 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://www.buhocleaner.com/download/"
+      url: "https://www.buhocleaner.com/"
       type: "dmg"
       size: "约 25 MB"
       recommended: true

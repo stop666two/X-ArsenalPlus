@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://keepass.info/download/"
+      url: "https://keepass.info/download.html"
       type: "exe"
       size: "约 6 MB"
       recommended: true
   macos:
     - label: "官网下载 (Mono)"
-      url: "https://keepass.info/download/"
+      url: "https://keepass.info/download.html"
       type: "zip"
       size: "约 8 MB"
       recommended: true
   linux:
     - label: "官网下载 (Mono)"
-      url: "https://keepass.info/download/"
+      url: "https://keepass.info/download.html"
       type: "zip"
       size: "约 7 MB"
       recommended: true

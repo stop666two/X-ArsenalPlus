@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.usebruno.com/download/"
+      url: "https://www.usebruno.com/"
       type: "exe"
       size: "约 65 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.usebruno.com/download/"
+      url: "https://www.usebruno.com/"
       type: "dmg"
       size: "约 80 MB"
       recommended: true
   linux:
     - label: "官网下载 (AppImage)"
-      url: "https://www.usebruno.com/download/"
+      url: "https://www.usebruno.com/"
       type: "appimage"
       size: "约 70 MB"
       recommended: true

@@ -17,7 +17,7 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://theunarchiver.com/download/"
+      url: "https://theunarchiver.com"
       type: "dmg"
       size: "约 12 MB"
       recommended: true

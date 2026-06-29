@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.jam-software.com/treesize/download/"
+      url: "https://www.jam-software.com/treesize"
       type: "exe"
       size: "约 25 MB"
       recommended: true

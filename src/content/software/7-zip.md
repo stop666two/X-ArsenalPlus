@@ -20,7 +20,7 @@ downloads:
       size: "1.5 MB"
       recommended: true
     - label: "SourceForge (自动最新版)"
-      url: "https://sourceforge.net/projects/sevenzip/files/latest/download"
+      url: "https://www.7-zip.org/download.html"
       type: "exe"
     - label: "便携版 (ZIP)"
       url: "https://www.7-zip.org/download.html"
@@ -28,7 +28,7 @@ downloads:
       size: "1.9 MB"
   linux:
     - label: "命令行版本 (p7zip)"
-      url: "https://sourceforge.net/projects/p7zip/files/latest/download"
+      url: "https://github.com/jinfeihan57/p7zip/releases/latest"
       type: "tar.bz2"
       size: "4.8 MB"
       recommended: true

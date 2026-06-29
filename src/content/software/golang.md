@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://go.dev/download/"
+      url: "https://go.dev/"
       type: "exe"
       size: "约 65 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://go.dev/download/"
+      url: "https://go.dev/"
       type: "pkg"
       size: "约 80 MB"
       recommended: true
   linux:
     - label: "官网下载 (.tar.gz)"
-      url: "https://go.dev/download/"
+      url: "https://go.dev/"
       type: "zip"
       size: "约 70 MB"
       recommended: true

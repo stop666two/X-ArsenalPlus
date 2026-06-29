@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://www.mirovideoconverter.com/download/"
+      url: "https://github.com/pculture/mirovideoconverter3"
       type: "exe"
       size: "约 55 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://www.mirovideoconverter.com/download/"
+      url: "https://github.com/pculture/mirovideoconverter3"
       type: "dmg"
       size: "约 70 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://www.mirovideoconverter.com/download/"
+      url: "https://github.com/pculture/mirovideoconverter3"
       type: "deb"
       size: "约 60 MB"
       recommended: true

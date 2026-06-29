@@ -15,19 +15,19 @@ description: "Audacity 是由 Muse Group 维护的开源音频编辑和录音软
 downloads:
   windows:
     - label: "官方下载"
-      url: "https://www.audacityteam.org/download/windows/audacity-3.7.3-win-x64.exe"
+      url: "https://www.audacityteam.org/"
       type: "exe"
       size: "35 MB"
       recommended: true
   macos:
     - label: "官方下载"
-      url: "https://www.audacityteam.org/download/macos/audacity-3.7.3-macOS.dmg"
+      url: "https://www.audacityteam.org/download/mac/"
       type: "dmg"
       size: "42 MB"
       recommended: true
   linux:
     - label: "官方下载"
-      url: "https://www.audacityteam.org/download/linux/audacity-3.7.3-linux.deb"
+      url: "https://www.audacityteam.org/download/linux/"
       type: "deb"
       size: "30 MB"
 download_count: 42100

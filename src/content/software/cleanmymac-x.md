@@ -17,7 +17,7 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://cleanmymac.com/download"
+      url: "https://my.macpaw.com/trial/cleanmymac"
       type: "dmg"
       size: "约 65 MB"
       recommended: true

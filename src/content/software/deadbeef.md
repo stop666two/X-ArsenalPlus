@@ -16,7 +16,7 @@ description: |
 downloads:
   linux:
     - label: "官网下载"
-      url: "https://deadbeef.sourceforge.io/download/"
+      url: "https://sourceforge.net/projects/deadbeef/files/latest/download"
       type: "deb"
       size: "约 8 MB"
       recommended: true

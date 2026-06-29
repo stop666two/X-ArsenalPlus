@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://restic.net/download/"
+      url: "https://github.com/restic/restic/releases/latest"
       type: "exe"
       size: "约 12 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://restic.net/download/"
+      url: "https://github.com/restic/restic/releases/latest"
       type: "zip"
       size: "约 15 MB"
       recommended: true
   linux:
     - label: "官网下载"
-      url: "https://restic.net/download/"
+      url: "https://github.com/restic/restic/releases/latest"
       type: "zip"
       size: "约 14 MB"
       recommended: true

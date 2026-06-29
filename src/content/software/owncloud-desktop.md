@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://owncloud.com/desktop-client/"
+      url: "https://owncloud.com/desktop-app"
       type: "exe"
       size: "约 60 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://owncloud.com/desktop-client/"
+      url: "https://owncloud.com/desktop-app"
       type: "dmg"
       size: "约 75 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://owncloud.com/desktop-client/"
+      url: "https://owncloud.com/desktop-app"
       type: "deb"
       size: "约 65 MB"
       recommended: true

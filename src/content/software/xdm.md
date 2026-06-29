@@ -17,7 +17,7 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://xdman.sourceforge.net/download/"
+      url: "https://github.com/subhra74/xdm/releases/latest"
       type: "exe"
       size: "约 35 MB"
       recommended: true

@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://peazip.github.io/download/"
+      url: "https://github.com/peazip/PeaZip/releases/latest"
       type: "exe"
       size: "约 15 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://peazip.github.io/download/"
+      url: "https://github.com/peazip/PeaZip/releases/latest"
       type: "dmg"
       size: "约 18 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://peazip.github.io/download/"
+      url: "https://github.com/peazip/PeaZip/releases/latest"
       type: "deb"
       size: "约 16 MB"
       recommended: true

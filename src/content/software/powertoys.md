@@ -22,7 +22,7 @@ downloads:
       size: "约 65 MB"
       recommended: true
     - label: "Microsoft Store"
-      url: "https://www.microsoft.com/store/apps/XP89DCGQ3K6VLD"
+      url: "https://github.com/microsoft/PowerToys/releases/latest"
       type: "msi"
       size: "约 65 MB"
 download_count: 54300

@@ -17,8 +17,8 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://ulysses.app/download/"
-      type: "dmg"
+      url: "https://apps.apple.com/app/id1225571038"
+      type: "macappstore"
       size: "约 65 MB"
       recommended: true
 download_count: 17800

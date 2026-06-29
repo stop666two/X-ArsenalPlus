@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://ugetdm.com/download/"
+      url: "https://sourceforge.net/projects/urlget/files/latest/download"
       type: "exe"
       size: "约 12 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://ugetdm.com/download/"
+      url: "https://sourceforge.net/projects/urlget/files/latest/download"
       type: "dmg"
       size: "约 15 MB"
       recommended: true
   linux:
     - label: "官网下载 (.deb)"
-      url: "https://ugetdm.com/download/"
+      url: "https://sourceforge.net/projects/urlget/files/latest/download"
       type: "deb"
       size: "约 14 MB"
       recommended: true

@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://readdle.com/calendars/download"
-      type: "exe"
+      url: "https://readdle.com/calendars"
+      type: "macappstore"
       size: "约 60 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://readdle.com/calendars/download"
+      url: "https://readdle.com/calendars"
       type: "dmg"
       size: "约 75 MB"
       recommended: true
   linux:
     - label: "官网下载 (AppImage)"
-      url: "https://readdle.com/calendars/download"
+      url: "https://readdle.com/calendars"
       type: "appimage"
       size: "约 65 MB"
       recommended: true

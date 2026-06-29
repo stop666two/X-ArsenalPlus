@@ -17,19 +17,19 @@ description: |
 downloads:
   windows:
     - label: "官网下载"
-      url: "https://rustdesk.com/download/"
+      url: "https://github.com/rustdesk/rustdesk/releases/latest"
       type: "exe"
       size: "约 25 MB"
       recommended: true
   macos:
     - label: "官网下载"
-      url: "https://rustdesk.com/download/"
+      url: "https://github.com/rustdesk/rustdesk/releases/latest"
       type: "dmg"
       size: "约 30 MB"
       recommended: true
   linux:
     - label: "官网下载 (AppImage)"
-      url: "https://rustdesk.com/download/"
+      url: "https://github.com/rustdesk/rustdesk/releases/latest"
       type: "appimage"
       size: "约 28 MB"
       recommended: true

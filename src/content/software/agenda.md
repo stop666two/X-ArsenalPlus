@@ -17,8 +17,8 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://agenda.com/download/"
-      type: "dmg"
+      url: "https://apps.apple.com/app/id1287445660"
+      type: "macappstore"
       size: "约 25 MB"
       recommended: true
 download_count: 13400

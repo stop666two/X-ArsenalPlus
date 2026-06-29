@@ -17,7 +17,7 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://getkap.co/download/"
+      url: "https://github.com/wulkano/kap/releases/latest"
       type: "dmg"
       size: "约 15 MB"
       recommended: true

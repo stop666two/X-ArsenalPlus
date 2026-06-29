@@ -16,13 +16,13 @@ description: |
 downloads:
   macos:
     - label: "官网下载"
-      url: "https://www.borgbackup.org/download/"
+      url: "https://github.com/borgbackup/borg/releases/latest"
       type: "zip"
       size: "约 8 MB"
       recommended: true
   linux:
     - label: "官网下载"
-      url: "https://www.borgbackup.org/download/"
+      url: "https://github.com/borgbackup/borg/releases/latest"
       type: "zip"
       size: "约 8 MB"
       recommended: true
