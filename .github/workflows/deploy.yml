@@ -18,11 +18,17 @@ jobs:
       - run: npm install
       - run: npm run build
 
+      - name: Create Cloudflare Pages project (first time)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages project create x-arsenalplus --production-branch master
+        continue-on-error: true
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: |
-            wrangler pages project create x-arsenalplus --production-branch=master 2>/dev/null || true
-            wrangler pages deploy dist --project-name=x-arsenalplus --branch=master
+          command: pages deploy dist --project-name x-arsenalplus --branch master
