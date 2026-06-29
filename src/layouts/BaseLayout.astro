@@ -77,16 +77,23 @@ const searchIndex = allSoftware.map(s => ({
       });
     </script>
     <script is:inline>
-      var el = document.getElementById('search-data');
-      var SEARCH_DATA = el ? JSON.parse(el.textContent || '[]') : [];
+      var searchDataEl = document.getElementById('search-data');
+      var SEARCH_DATA = searchDataEl ? JSON.parse(searchDataEl.textContent || '[]') : [];
 
       function matchSoftware(item, query) {
         var q = query.toLowerCase();
-        var fields = [item.t, item.d, item.c, item.v].concat(item.g || []);
-        return fields.some(function(f) { return f.toLowerCase().indexOf(q) !== -1; });
+        if (item.t.toLowerCase().indexOf(q) !== -1) return true;
+        if ((item.d || '').toLowerCase().indexOf(q) !== -1) return true;
+        if ((item.c || '').toLowerCase().indexOf(q) !== -1) return true;
+        if ((item.v || '').toLowerCase().indexOf(q) !== -1) return true;
+        var tags = item.g || [];
+        for (var i = 0; i < tags.length; i++) {
+          if (tags[i].toLowerCase().indexOf(q) !== -1) return true;
+        }
+        return false;
       }
 
-      (function() {
+      document.addEventListener('DOMContentLoaded', function() {
         var input = document.getElementById('search-input');
         var results = document.getElementById('search-results');
         var overlay = document.getElementById('search-overlay');
@@ -99,13 +106,17 @@ const searchIndex = allSoftware.map(s => ({
             results.innerHTML = '<div class="search-empty">未找到相关软件</div>';
             return;
           }
-          results.innerHTML = items.slice(0, 12).map(function(s) {
-            return '<a class="search-item" href="' + s.u + '">' +
-              '<span class="search-item-title">' + s.t + ' <small style="color:var(--text-muted)">v' + s.v + '</small></span>' +
+          var html = '';
+          var max = items.length > 12 ? 12 : items.length;
+          for (var i = 0; i < max; i++) {
+            var s = items[i];
+            html += '<a class="search-item" href="' + s.u + '">' +
+              '<span class="search-item-title">' + s.t + '</span>' +
               '<span class="search-item-desc">' + (s.d || '').slice(0, 120) + '</span>' +
-              '<span class="search-item-meta">' + s.c + '</span>' +
+              '<span class="search-item-meta">' + (s.c || '') + '</span>' +
               '</a>';
-          }).join('');
+          }
+          results.innerHTML = html;
         }
 
         input.addEventListener('input', function() {
@@ -113,13 +124,15 @@ const searchIndex = allSoftware.map(s => ({
           var q = input.value.trim();
           if (q.length < 1) {
             overlay.classList.remove('active');
-            results.innerHTML = '';
             return;
           }
           overlay.classList.add('active');
           results.innerHTML = '<div class="search-empty">搜索中...</div>';
           timer = setTimeout(function() {
-            var matched = SEARCH_DATA.filter(function(s) { return matchSoftware(s, q); });
+            var matched = [];
+            for (var i = 0; i < SEARCH_DATA.length; i++) {
+              if (matchSoftware(SEARCH_DATA[i], q)) matched.push(SEARCH_DATA[i]);
+            }
             render(matched);
           }, 150);
         });
@@ -135,7 +148,7 @@ const searchIndex = allSoftware.map(s => ({
             input.blur();
           }
         });
-      })();
+      });
     </script>
   </body>
 </html>
