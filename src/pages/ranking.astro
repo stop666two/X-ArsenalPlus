@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SoftwareCard from '../components/SoftwareCard.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORIES, PLATFORMS, PLATFORM_ICONS, PLATFORM_NAMES, getCategorySlug } from '../lib/constants';
+
+const allSoftware = await getCollection('software');
+
+const topOverall = [...allSoftware]
+  .sort((a, b) => (b.data.download_count || 0) - (a.data.download_count || 0))
+  .slice(0, 20);
+
+const categoryTops = CATEGORIES.map(cat => {
+  const items = allSoftware
+    .filter(s => s.data.categories.includes(cat))
+    .sort((a, b) => (b.data.download_count || 0) - (a.data.download_count || 0))
+    .slice(0, 5);
+  return { category: cat, items };
+}).filter(c => c.items.length > 0);
+
+const platformTops = PLATFORMS.map(plat => {
+  const items = allSoftware
+    .filter(s => s.data.platforms.includes(plat))
+    .sort((a, b) => (b.data.download_count || 0) - (a.data.download_count || 0))
+    .slice(0, 5);
+  return { platform: plat, items };
+}).filter(p => p.items.length > 0);
+---
+
+<BaseLayout title="下载排行榜" description="X-ArsenalPlus 软件下载热度排行榜">
+  <h1 class="page-title">🏆 下载排行榜</h1>
+  <p class="page-subtitle">基于下载热度的综合排名</p>
+
+  <section class="rank-section">
+    <h2>🔥 全站热门 Top 20</h2>
+    <div class="rank-list">
+      {topOverall.map((s, i) => {
+        const count = s.data.download_count || 0;
+        const countStr = count >= 10000 ? `${(count / 10000).toFixed(1)}万` : count.toLocaleString('zh-CN');
+        return (
+        <div class="rank-item">
+          <span class:list={['rank-num', `rank-${i + 1}` as any]}>{i + 1}</span>
+          <div class="rank-card">
+            <div class="rank-info">
+              <a href={`/software/${s.id.replace(/\.md$/, '')}/`} class="rank-name">{s.data.title}</a>
+              <span class="rank-count">📥 {countStr} 次下载</span>
+              <span class="rank-cat">{s.data.categories[0]}</span>
+            </div>
+            <div class="rank-plats">
+              {(s.data.platforms || []).map((p: string) => (
+                <span class="platform-tag">{PLATFORM_ICONS[p]} {PLATFORM_NAMES[p]}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+        );
+      })}
+    </div>
+  </section>
+
+  {categoryTops.map(({ category, items }) => (
+    <section class="rank-section">
+      <h2>
+        <a href={`/category/${getCategorySlug(category)}/`}>📂 {category}</a>
+        <span class="rank-subtitle"> Top {items.length}</span>
+      </h2>
+      <div class="software-grid">
+        {items.map(s => <SoftwareCard software={s} />)}
+      </div>
+    </section>
+  ))}
+
+  {platformTops.map(({ platform, items }) => (
+    <section class="rank-section">
+      <h2>
+        <a href={`/platform/${platform}/`}>{PLATFORM_ICONS[platform]} {PLATFORM_NAMES[platform]}</a>
+        <span class="rank-subtitle"> Top {items.length}</span>
+      </h2>
+      <div class="software-grid">
+        {items.map(s => <SoftwareCard software={s} />)}
+      </div>
+    </section>
+  ))}
+</BaseLayout>
+
+<style>
+  .page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .page-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+  .rank-section {
+    margin-bottom: 48px;
+  }
+  .rank-section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .rank-section h2 a {
+    color: var(--text-primary);
+  }
+  .rank-section h2 a:hover {
+    color: var(--accent-primary);
+  }
+  .rank-subtitle {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .rank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .rank-item {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .rank-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+  .rank-1 { color: #f0c040; border-color: rgba(240, 192, 64, 0.3); background: rgba(240, 192, 64, 0.08); }
+  .rank-2 { color: #c0c0c0; border-color: rgba(192, 192, 192, 0.3); background: rgba(192, 192, 192, 0.08); }
+  .rank-3 { color: #cd7f32; border-color: rgba(205, 127, 50, 0.3); background: rgba(205, 127, 50, 0.08); }
+  .rank-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    transition: all 0.2s;
+  }
+  .rank-card:hover {
+    border-color: var(--text-muted);
+    background: var(--bg-card-hover);
+  }
+  .rank-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .rank-name {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+    min-width: 140px;
+  }
+  .rank-name:hover {
+    color: var(--accent-primary);
+  }
+  .rank-count {
+    font-size: 0.8125rem;
+    color: var(--accent-secondary);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .rank-cat {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--bg-tertiary);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+  }
+  .rank-plats {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .platform-tag {
+    font-size: 0.6875rem;
+    padding: 1px 6px;
+    background: rgba(240, 136, 62, 0.1);
+    color: var(--accent-orange);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(240, 136, 62, 0.2);
+    white-space: nowrap;
+  }
+  .software-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .software-grid { grid-template-columns: 1fr; }
+    .rank-num { width: 36px; font-size: 1rem; }
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+import { GITHUB_REPO } from '../lib/constants';
+---
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">⚔️ X-ArsenalPlus</div>
+      <p class="footer-desc">软件军械库 — 为 Windows / macOS / Linux 用户提供精准、安全、多源的软件下载服务。纯静态、无后端、无注册，打开即用。</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>导航</h4>
+        <a href="/">首页</a>
+        <a href="/browse/">全部软件</a>
+        <a href="/ranking/">排行榜</a>
+      </div>
+      <div class="footer-col">
+        <h4>平台</h4>
+        <a href="/platform/windows/">Windows</a>
+        <a href="/platform/macos/">macOS</a>
+        <a href="/platform/linux/">Linux</a>
+      </div>
+      <div class="footer-col">
+        <h4>项目</h4>
+        <a href={`https://github.com/${GITHUB_REPO.owner}/${GITHUB_REPO.repo}/issues/new?template=submit-software.yml`} target="_blank">提交软件</a>
+        <a href={`https://github.com/${GITHUB_REPO.owner}/${GITHUB_REPO.repo}`} target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>&copy; {new Date().getFullYear()} X-ArsenalPlus. 所有软件下载链接均来自官方或可信镜像源。</span>
+    </div>
+  </div>
+</footer>
+<style>
+  .footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-primary);
+    margin-top: 48px;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 48px;
+    padding: 48px 24px;
+  }
+  .footer-logo {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 12px;
+  }
+  .footer-desc {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 360px;
+  }
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .footer-col h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    padding: 4px 0;
+    transition: color 0.15s;
+  }
+  .footer-col a:hover {
+    color: var(--text-primary);
+  }
+  .footer-bottom {
+    border-top: 1px solid var(--border-primary);
+    padding: 16px 0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  @media (max-width: 768px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .footer-links {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

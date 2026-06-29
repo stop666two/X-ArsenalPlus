@@ -1,0 +1,175 @@
+---
+import { PLATFORM_ICONS, PLATFORM_NAMES } from '../lib/constants';
+export interface PlatformDownload {
+  label: string;
+  url: string;
+  type?: string;
+  size?: string;
+  recommended?: boolean;
+}
+export interface Downloads {
+  windows?: PlatformDownload[];
+  macos?: PlatformDownload[];
+  linux?: PlatformDownload[];
+}
+export interface Props {
+  downloads: Downloads;
+}
+const { downloads } = Astro.props;
+const platforms = ['windows', 'macos', 'linux'] as const;
+const hasAnyDownload = platforms.some(p => downloads[p] && downloads[p].length > 0);
+---
+<div class="download-panel">
+  <h3 class="download-title">📥 下载</h3>
+  {!hasAnyDownload && (
+    <p class="download-empty">暂无下载链接</p>
+  )}
+  {hasAnyDownload && (
+    <div class="download-tabs">
+      {platforms.filter(p => downloads[p] && downloads[p].length > 0).map(p => (
+        <button class="tab-btn" data-platform={p}>
+          {PLATFORM_ICONS[p]} {PLATFORM_NAMES[p]}
+        </button>
+      ))}
+    </div>
+  )}
+  {hasAnyDownload && platforms.filter(p => downloads[p] && downloads[p].length > 0).map(p => (
+    <div class="download-content" data-platform={p}>
+      {downloads[p]!.map((link: PlatformDownload) => (
+        <div class:list={['download-item', { recommended: link.recommended }]}>
+          <div class="download-item-info">
+            <span class="download-label">🔗 {link.label}</span>
+            <span class="download-meta">
+              {link.size && <span>{link.size}</span>}
+              {link.type && <span>· {link.type.toUpperCase()}</span>}
+              {link.recommended && <span class="download-recommended">· ⭐ 推荐</span>}
+            </span>
+          </div>
+          <a href={link.url} target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm download-btn">
+            立即下载
+          </a>
+        </div>
+      ))}
+    </div>
+  ))}
+</div>
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.closest('.download-panel');
+      if (!panel) return;
+      panel.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const platform = (btn as HTMLElement).dataset.platform;
+      panel.querySelectorAll('.download-content').forEach(c => {
+        const el = c as HTMLElement;
+        el.style.display = el.dataset.platform === platform ? 'block' : 'none';
+      });
+    });
+  });
+  document.querySelectorAll('.download-panel .tab-btn:first-child').forEach(btn => {
+    (btn as HTMLButtonElement).click();
+  });
+</script>
+<style>
+  .download-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .download-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .download-empty {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+  .download-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+    border-bottom: 2px solid var(--border-primary);
+  }
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+  }
+  .tab-btn:hover {
+    color: var(--text-primary);
+  }
+  .tab-btn.active {
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
+  }
+  .download-content {
+    display: none;
+    padding-top: 16px;
+  }
+  .download-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    margin-bottom: 8px;
+    transition: all 0.15s;
+  }
+  .download-item:hover {
+    background: var(--bg-card-hover);
+  }
+  .download-item.recommended {
+    border-color: rgba(88, 166, 255, 0.3);
+    background: rgba(88, 166, 255, 0.05);
+  }
+  .download-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+  }
+  .download-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  .download-meta {
+    display: flex;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+  }
+  .download-recommended {
+    color: var(--accent-primary);
+  }
+  .download-btn {
+    flex-shrink: 0;
+  }
+  @media (max-width: 640px) {
+    .download-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .download-btn {
+      align-self: flex-end;
+    }
+    .tab-btn {
+      padding: 8px 12px;
+      font-size: 0.75rem;
+    }
+  }
+</style>

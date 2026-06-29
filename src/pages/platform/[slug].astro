@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SoftwareCard from '../../components/SoftwareCard.astro';
+import { getCollection } from 'astro:content';
+import { PLATFORMS, PLATFORM_ICONS, PLATFORM_NAMES } from '../../lib/constants';
+
+export async function getStaticPaths() {
+  return PLATFORMS.map(p => ({ params: { slug: p } }));
+}
+
+const { slug } = Astro.params;
+const platformName = PLATFORM_NAMES[slug];
+const platformIcon = PLATFORM_ICONS[slug];
+
+if (!platformName) {
+  return Astro.redirect('/');
+}
+
+const allSoftware = await getCollection('software');
+const software = allSoftware
+  .filter(s => s.data.platforms.includes(slug))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout title={`${platformName} 软件`} description={`X-ArsenalPlus 收录的所有 ${platformName} 平台软件`}>
+  <nav class="breadcrumb">
+    <a href="/">首页</a>
+    <span>/</span>
+    <span class="current">{platformIcon} {platformName}</span>
+  </nav>
+
+  <h1 class="page-title">{platformIcon} {platformName} 软件</h1>
+  <p class="page-subtitle">共收录 {software.length} 款 {platformName} 平台软件</p>
+
+  {software.length === 0 ? (
+    <div class="empty-state">
+      <div class="icon">📭</div>
+      <p>该平台暂无软件</p>
+    </div>
+  ) : (
+    <div class="software-grid">
+      {software.map(s => <SoftwareCard software={s} />)}
+    </div>
+  )}
+
+  <div class="back-link">
+    <a href="/" class="btn">← 返回首页</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+  .breadcrumb a { color: var(--text-muted); }
+  .breadcrumb a:hover { color: var(--accent-primary); }
+  .breadcrumb .current { color: var(--text-primary); }
+  .page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .page-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+  .software-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .back-link {
+    margin-top: 40px;
+  }
+  @media (max-width: 768px) {
+    .software-grid { grid-template-columns: 1fr; }
+  }
+</style>

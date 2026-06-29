@@ -1,0 +1,21 @@
+{
+  "name": "x-arsenalplus",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "X-ArsenalPlus — 软件军械库（极速静态版）",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "pagefind": "^1.3.0",
+    "typescript": "^5.7.0"
+  }
+}

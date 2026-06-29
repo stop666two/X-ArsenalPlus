@@ -1,0 +1,170 @@
+---
+import { PLATFORM_ICONS, PLATFORM_NAMES, getCategorySlug } from '../lib/constants';
+import type { SoftwareFrontmatter } from '../content/config';
+export interface Props {
+  software: {
+    id: string;
+    data: SoftwareFrontmatter;
+  };
+  featured?: boolean;
+}
+const { software, featured = false } = Astro.props;
+const { data } = software;
+const slug = software.id.replace(/\.md$/, '');
+const platformList = data.platforms || [];
+---
+<article class:list={['software-card', { featured }]}>
+  <div class="card-header">
+    {data.icon && <img class="card-icon" src={data.icon} alt={data.title} loading="lazy" onerror="this.style.display='none'" />}
+    <div class="card-title-group">
+      <h3 class="card-title">
+        <a href={`/software/${slug}/`}>{data.title}</a>
+      </h3>
+    </div>
+  </div>
+  {data.description && <p class="card-desc">{data.description.slice(0, 120)}{data.description.length > 120 ? '...' : ''}</p>}
+  <div class="card-meta">
+    {platformList.map((p: string) => (
+      <span class="platform-tag">{PLATFORM_ICONS[p]} {PLATFORM_NAMES[p]}</span>
+    ))}
+  </div>
+  <div class="card-footer">
+    {data.categories.slice(0, 1).map(c => (
+      <a href={`/category/${getCategorySlug(c)}/`} class="badge">{c}</a>
+    ))}
+    {data.tags && data.tags.slice(0, 2).map((t: string) => (
+      <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}/`} class="badge">{t}</a>
+    ))}
+    <a href={`/software/${slug}/`} class="btn btn--sm card-action">详情 & 下载 →</a>
+  </div>
+</article>
+<style>
+  .software-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .software-card:hover {
+    border-color: var(--text-muted);
+    background: var(--bg-card-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .software-card.featured {
+    border-color: rgba(88, 166, 255, 0.3);
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.05) 0%, var(--bg-card) 50%);
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 40px;
+  }
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    object-fit: contain;
+    background: var(--bg-tertiary);
+    flex-shrink: 0;
+  }
+  .card-title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  .card-title a {
+    color: var(--text-primary);
+  }
+  .card-title a:hover {
+    color: var(--accent-primary);
+  }
+  .card-version {
+    font-size: 0.6875rem;
+    color: var(--accent-secondary);
+    background: rgba(63, 185, 80, 0.1);
+    padding: 1px 6px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    flex-shrink: 0;
+  }
+  .card-desc {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 3.6em;
+  }
+  .card-meta {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    min-height: 22px;
+  }
+  .platform-tag {
+    font-size: 0.6875rem;
+    padding: 1px 6px;
+    background: rgba(240, 136, 62, 0.1);
+    color: var(--accent-orange);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(240, 136, 62, 0.2);
+    white-space: nowrap;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-primary);
+    flex-wrap: wrap;
+    max-height: 56px;
+    overflow: hidden;
+  }
+  .card-action {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .card-footer .badge {
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+    max-width: 120px;
+    font-size: 0.6875rem;
+    padding: 1px 5px;
+  }
+  @media (max-width: 640px) {
+    .software-card {
+      padding: 16px;
+    }
+    .card-header {
+      gap: 8px;
+    }
+    .card-icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+</style>

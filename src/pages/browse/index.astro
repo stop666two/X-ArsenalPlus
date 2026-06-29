@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SoftwareCard from '../../components/SoftwareCard.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORIES, PLATFORMS, PLATFORM_ICONS, PLATFORM_NAMES } from '../../lib/constants';
+
+const allSoftware = await getCollection('software');
+---
+
+<BaseLayout title="软件列表" description="X-ArsenalPlus 完整软件列表，支持多维度筛选与排序">
+  <nav class="breadcrumb">
+    <a href="/">首页</a>
+    <span>/</span>
+    <span class="current">软件列表</span>
+  </nav>
+
+  <div class="browse-header">
+    <h1 class="page-title">📋 软件列表</h1>
+    <p class="page-subtitle" id="result-info">共 {allSoftware.length} 款软件</p>
+  </div>
+
+  <div class="toolbar">
+    <div class="toolbar-filters">
+      <select class="input filter-select" id="category-filter">
+        <option value="">📂 全部分类</option>
+        {CATEGORIES.map(c => (
+          <option value={c}>{c}</option>
+        ))}
+      </select>
+      <select class="input filter-select" id="platform-filter">
+        <option value="">🖥️ 全部平台</option>
+        {PLATFORMS.map(p => (
+          <option value={p}>{PLATFORM_ICONS[p]} {PLATFORM_NAMES[p]}</option>
+        ))}
+      </select>
+    </div>
+    <div class="toolbar-sort">
+      <span class="sort-label">排序:</span>
+      <button class="sort-btn active" data-sort="newest">🕐 最新更新</button>
+      <button class="sort-btn" data-sort="hot">🔥 最热下载</button>
+      <button class="sort-btn" data-sort="name-asc">🔤 A-Z</button>
+      <button class="sort-btn" data-sort="name-desc">🔤 Z-A</button>
+    </div>
+  </div>
+
+  <div class="software-grid" id="software-grid">
+    {allSoftware.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).map(s => (
+      <div class="grid-item" data-categories={s.data.categories.join(',')} data-platforms={s.data.platforms.join(',')} data-date={s.data.date.getTime()} data-downloads={s.data.download_count || 0} data-title={s.data.title}>
+        <SoftwareCard software={s} />
+      </div>
+    ))}
+  </div>
+
+  <nav class="pagination" id="pagination"></nav>
+
+  <div class="empty-state" id="empty-state" style="display:none">
+    <div class="icon">📭</div>
+    <p>没有找到符合条件的软件</p>
+  </div>
+</BaseLayout>
+
+<script>
+  const allItems = Array.from(document.querySelectorAll<HTMLElement>('#software-grid .grid-item'));
+  const perPage = 24;
+  const PNames: Record<string, string> = { windows: 'Windows', macos: 'macOS', linux: 'Linux' };
+
+  function render() {
+    const url = new URL(location.href);
+    const sort = url.searchParams.get('sort') || 'newest';
+    const cat = url.searchParams.get('category') || '';
+    const plat = url.searchParams.get('platform') || '';
+    const page = Math.max(1, parseInt(url.searchParams.get('page') || '1'));
+
+    let visible = allItems.filter(el => {
+      if (cat) {
+        const cats = el.dataset.categories?.split(',') || [];
+        if (!cats.includes(cat)) return false;
+      }
+      if (plat) {
+        const platforms = el.dataset.platforms?.split(',') || [];
+        if (!platforms.includes(plat)) return false;
+      }
+      return true;
+    });
+
+    switch (sort) {
+      case 'hot':
+        visible.sort((a, b) => (parseInt(b.dataset.downloads || '0') - parseInt(a.dataset.downloads || '0')));
+        break;
+      case 'name-asc':
+        visible.sort((a, b) => (a.dataset.title || '').localeCompare(b.dataset.title || '', 'zh-CN'));
+        break;
+      case 'name-desc':
+        visible.sort((a, b) => (b.dataset.title || '').localeCompare(a.dataset.title || '', 'zh-CN'));
+        break;
+      default:
+        visible.sort((a, b) => (parseInt(b.dataset.date || '0') - parseInt(a.dataset.date || '0')));
+        break;
+    }
+
+    const total = visible.length;
+    const pages = Math.ceil(total / perPage);
+    const p = Math.min(page, pages || 1);
+    const paged = visible.slice((p - 1) * perPage, p * perPage);
+
+    allItems.forEach(el => el.style.display = 'none');
+    paged.forEach(el => el.style.display = '');
+
+    const grid = document.getElementById('software-grid')!;
+    paged.forEach(el => grid.appendChild(el));
+
+    document.getElementById('result-info')!.textContent =
+      `共 ${total} 款软件${cat ? ` · 分类: ${cat}` : ''}${plat ? ` · 平台: ${PNames[plat] || plat}` : ''}`;
+
+    document.getElementById('empty-state')!.style.display = total === 0 ? '' : 'none';
+
+    const pag = document.getElementById('pagination')!;
+    if (pages > 1) {
+      let html = '';
+      if (p > 1) html += `<button class="btn page-btn" data-page="${p - 1}">← 上一页</button>`;
+      for (let i = 1; i <= pages; i++) {
+        html += `<button class="btn page-btn${i === p ? ' page-btn--active' : ''}" data-page="${i}">${i}</button>`;
+      }
+      if (p < pages) html += `<button class="btn page-btn" data-page="${p + 1}">下一页 →</button>`;
+      pag.innerHTML = html;
+    } else {
+      pag.innerHTML = '';
+    }
+
+    document.querySelectorAll('.sort-btn').forEach(b => {
+      b.classList.toggle('active', (b as HTMLElement).dataset.sort === sort);
+    });
+    (document.getElementById('category-filter') as HTMLSelectElement).value = cat;
+    (document.getElementById('platform-filter') as HTMLSelectElement).value = plat;
+  }
+
+  function pushState() {
+    const sort = (document.querySelector('.sort-btn.active') as HTMLElement)?.dataset.sort || 'newest';
+    const cat = (document.getElementById('category-filter') as HTMLSelectElement).value;
+    const plat = (document.getElementById('platform-filter') as HTMLSelectElement).value;
+    const params = new URLSearchParams();
+    if (sort !== 'newest') params.set('sort', sort);
+    if (cat) params.set('category', cat);
+    if (plat) params.set('platform', plat);
+    const qs = params.toString();
+    history.pushState(null, '', qs ? `/browse/?${qs}` : '/browse/');
+    render();
+  }
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('.sort-btn')) {
+      document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+      target.closest('.sort-btn')!.classList.add('active');
+      pushState();
+    }
+    const pageBtn = target.closest('.page-btn') as HTMLElement | null;
+    if (pageBtn && pageBtn.dataset.page) {
+      const url = new URL(location.href);
+      url.searchParams.set('page', pageBtn.dataset.page);
+      history.pushState(null, '', url.toString());
+      render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  document.getElementById('category-filter')!.addEventListener('change', pushState);
+  document.getElementById('platform-filter')!.addEventListener('change', pushState);
+  window.addEventListener('popstate', render);
+
+  render();
+</script>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+  .breadcrumb a { color: var(--text-muted); }
+  .breadcrumb a:hover { color: var(--accent-primary); }
+  .breadcrumb .current { color: var(--text-primary); }
+  .browse-header {
+    margin-bottom: 24px;
+  }
+  .page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .page-subtitle {
+    color: var(--text-muted);
+  }
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-primary);
+    margin-bottom: 24px;
+  }
+  .toolbar-filters {
+    display: flex;
+    gap: 8px;
+  }
+  .filter-select {
+    width: auto;
+    min-width: 160px;
+    cursor: pointer;
+  }
+  .toolbar-sort {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sort-label {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-right: 4px;
+  }
+  .sort-btn {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    background: none;
+    cursor: pointer;
+  }
+  .sort-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-primary);
+  }
+  .sort-btn.active {
+    color: var(--accent-primary);
+    border-color: rgba(88, 166, 255, 0.3);
+    background: rgba(88, 166, 255, 0.1);
+  }
+  .software-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 40px;
+  }
+  .page-btn {
+    min-width: 36px;
+    justify-content: center;
+  }
+  .page-btn--active {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: #fff;
+  }
+  .page-btn--active:hover {
+    background: #4090e0;
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .toolbar-filters {
+      width: 100%;
+    }
+    .filter-select {
+      flex: 1;
+      min-width: 0;
+    }
+    .toolbar-sort {
+      flex-wrap: wrap;
+    }
+    .software-grid { grid-template-columns: 1fr; }
+  }
+</style>

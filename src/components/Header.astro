@@ -1,0 +1,175 @@
+---
+import { PLATFORMS, PLATFORM_ICONS, PLATFORM_NAMES, GITHUB_REPO } from '../lib/constants';
+const currentUrl = Astro.url.pathname;
+function isActive(platform: string) {
+  return currentUrl === `/platform/${platform}/` || currentUrl.startsWith(`/platform/${platform}/`);
+}
+---
+<header class="header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-icon">⚔️</span>
+      <span class="logo-text">X-ArsenalPlus</span>
+      <span class="logo-sub">军械库</span>
+    </a>
+    <nav class="nav">
+      <a href="/" class:list={['nav-link', { active: currentUrl === '/' }]}>首页</a>
+      <a href="/browse/" class:list={['nav-link', { active: currentUrl.startsWith('/browse') }]}>全部软件</a>
+      <a href="/ranking/" class:list={['nav-link', { active: currentUrl === '/ranking/' }]}>排行榜</a>
+      <div class="nav-search">
+        <input
+          id="search-input"
+          type="text"
+          class="input search-input"
+          placeholder="🔍 搜索软件..."
+          autocomplete="off"
+        />
+        <div id="search-overlay" class="search-overlay">
+          <div id="search-results"></div>
+        </div>
+      </div>
+      <div class="nav-platforms">
+        <a href="/" class:list={['platform-chip', { active: currentUrl === '/' }]}>全部</a>
+        {PLATFORMS.map(p => (
+          <a href={`/platform/${p}/`} class:list={['platform-chip', { active: isActive(p) }]}>
+            {PLATFORM_ICONS[p]} {PLATFORM_NAMES[p]}
+          </a>
+        ))}
+      </div>
+    </nav>
+    <div class="header-action">
+        <a
+          href={`https://github.com/${GITHUB_REPO.owner}/${GITHUB_REPO.repo}/issues/new?template=submit-software.yml`}
+          target="_blank"
+          class="btn btn--primary btn--sm submit-btn"
+        >
+          📦 提交软件
+        </a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换亮色/暗色主题">
+          ☀️
+        </button>
+        <a
+          href={`https://github.com/${GITHUB_REPO.owner}/${GITHUB_REPO.repo}`}
+          target="_blank"
+          class="btn btn--sm"
+        >
+          ⭐ GitHub
+        </a>
+      </div>
+  </div>
+</header>
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-primary);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 24px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    flex-shrink: 0;
+  }
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+  .logo-text {
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: 0.5px;
+  }
+  .logo-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border-primary);
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+  }
+  .nav-link {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+  }
+  .nav-search {
+    position: relative;
+    flex: 1;
+    min-width: 140px;
+    max-width: 300px;
+  }
+  .search-input {
+    width: 100%;
+  }
+  .nav-platforms {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .platform-chip {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .platform-chip:hover,
+  .platform-chip.active {
+    color: var(--text-primary);
+    border-color: var(--border-primary);
+    background: var(--bg-tertiary);
+  }
+  .header-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .submit-btn {
+    white-space: nowrap;
+  }
+  @media (max-width: 768px) {
+    .header-inner {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .nav {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .nav-search {
+      max-width: 100%;
+      min-width: 0;
+      order: 10;
+      flex-basis: 100%;
+    }
+  }
+</style>

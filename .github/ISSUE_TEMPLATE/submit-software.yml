@@ -1,0 +1,110 @@
+name: 提交软件
+description: 向 X-ArsenalPlus 推荐新软件
+title: "[软件提交] "
+labels: ["software-submission"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: 软件名称
+      description: 软件的全名
+      placeholder: 例如: Visual Studio Code
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本号
+      description: 当前稳定版版本号
+      placeholder: 例如: 1.95.3
+  - type: dropdown
+    id: category
+    attributes:
+      label: 分类
+      options:
+        - 系统工具
+        - 系统监控
+        - 文件管理
+        - 开发环境
+        - 代码编辑器
+        - 版本控制
+        - 数据库管理
+        - 容器虚拟化
+        - 网络工具
+        - 远程控制
+        - 安全加密
+        - 多媒体播放
+        - 视频编辑
+        - 设计图形
+        - 办公效率
+        - 笔记写作
+        - 即时通讯
+        - 截图录屏
+        - 游戏娱乐
+        - 其他
+    validations:
+      required: true
+  - type: checkboxes
+    id: platforms
+    attributes:
+      label: 支持平台
+      options:
+        - label: Windows
+        - label: macOS
+        - label: Linux
+    validations:
+      required: true
+  - type: input
+    id: developer
+    attributes:
+      label: 开发者
+      placeholder: 例如: Microsoft
+  - type: input
+    id: website
+    attributes:
+      label: 官方网站
+      placeholder: https://
+  - type: input
+    id: icon
+    attributes:
+      label: 图标 URL
+      description: 软件的图标图片链接
+      placeholder: https://
+  - type: textarea
+    id: description
+    attributes:
+      label: 软件介绍
+      description: 简要描述软件的功能和特点（100-300字）
+  - type: textarea
+    id: tags
+    attributes:
+      label: 标签
+      description: 用逗号分隔的标签列表
+      placeholder: 例如: 编辑器, 文本处理, 开源, 跨平台
+  - type: textarea
+    id: downloads
+    attributes:
+      label: 下载链接
+      description: 请按平台列出下载链接（Windows/macOS/Linux）
+      placeholder: |
+        Windows:
+        - 官方下载: https://...
+        - 其他镜像: https://...
+        macOS:
+        - App Store: https://...
+        Linux:
+        - Snap: https://...
+        - Flatpak: https://...
+  - type: input
+    id: screenshots
+    attributes:
+      label: 截图 URL
+      description: 软件界面截图链接（可选，多张用逗号分隔）
+  - type: checkboxes
+    id: safe_status
+    attributes:
+      label: 安全性
+      options:
+        - label: 开源软件
+        - label: 已通过 VirusTotal 扫描
+        - label: 绿色免安装

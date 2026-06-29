@@ -1,0 +1,288 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DownloadPanel from '../../components/DownloadPanel.astro';
+import { getCollection } from 'astro:content';
+import { PLATFORM_ICONS, PLATFORM_NAMES, getCategorySlug } from '../../lib/constants';
+
+export async function getStaticPaths() {
+  const software = await getCollection('software');
+  return software.map(s => ({ params: { id: s.id.replace(/\.md$/, '') } }));
+}
+
+const { id } = Astro.params;
+const allSoftware = await getCollection('software');
+const software = allSoftware.find(s => s.id.replace(/\.md$/, '') === id);
+
+if (!software) {
+  return Astro.redirect('/');
+}
+
+const { data } = software;
+const related = allSoftware
+  .filter(s => s.id.replace(/\.md$/, '') !== id && s.data.categories.some(c => data.categories.includes(c)))
+  .slice(0, 4);
+
+function buildDescription(d: typeof data): string {
+  const parts: string[] = [];
+  if (d.version) parts.push(`v${d.version}`);
+  parts.push(d.developer || '');
+  parts.push((d.categories || [''])[0]);
+  if (d.description) parts.push(d.description.slice(0, 80));
+  return parts.filter(Boolean).join(' — ');
+}
+---
+
+<BaseLayout title={data.title} description={buildDescription(data)}>
+  <nav class="breadcrumb">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href={`/category/${getCategorySlug(data.categories[0])}/`}>{data.categories[0]}</a>
+    <span>/</span>
+    <span class="current">{data.title}</span>
+  </nav>
+
+  <article class="software-detail">
+    <header class="detail-header">
+      <div class="detail-hero">
+        {data.icon && (
+          <img class="detail-icon" src={data.icon} alt={data.title} loading="lazy" onerror="this.style.display='none'" />
+        )}
+        <div class="detail-info">
+          <h1 class="detail-title">{data.title}</h1>
+          {data.version && <span class="detail-version">v{data.version}</span>}
+          <div class="detail-meta-row">
+            {data.developer && <span class="meta-item">👤 {data.developer}</span>}
+            {data.size_summary && <span class="meta-item">📦 {data.size_summary}</span>}
+            <span class="meta-item">📅 {data.date.toISOString().slice(0, 10)}</span>
+          </div>
+          <div class="detail-meta-row">
+            {data.platforms.map(p => (
+              <span class="platform-badge">{PLATFORM_ICONS[p]} {PLATFORM_NAMES[p]}</span>
+            ))}
+          </div>
+          {data.website && (
+            <a href={data.website} target="_blank" rel="noopener noreferrer" class="btn btn--sm">🌐 官方网站</a>
+          )}
+        </div>
+      </div>
+      <div class="detail-badges">
+        {data.categories.map(c => (
+          <a href={`/category/${getCategorySlug(c)}/`} class="badge badge--accent">{c}</a>
+        ))}
+        {data.tags && data.tags.map(t => (
+          <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}/`} class="badge">{t}</a>
+        ))}
+        {data.badges && data.badges.map(b => (
+          <span class="badge badge--green">{b}</span>
+        ))}
+        {data.safe_status && data.safe_status === 'opensource' && (
+          <span class="badge badge--purple">📦 开源</span>
+        )}
+      </div>
+    </header>
+
+    {data.description && (
+      <section class="detail-section">
+        <h2>📝 软件介绍</h2>
+        <div class="detail-description">{data.description}</div>
+      </section>
+    )}
+
+    {data.screenshots && data.screenshots.length > 0 && (
+      <section class="detail-section">
+        <h2>📸 截图预览</h2>
+        <div class="screenshots-gallery">
+          {data.screenshots.map((url: string, i: number) => (
+            <img src={url} alt={`截图 ${i + 1}`} loading="lazy" class="screenshot-img" />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <DownloadPanel downloads={data.downloads} />
+
+    {related.length > 0 && (
+      <section class="detail-section">
+        <h2>📂 同类软件推荐</h2>
+        <div class="related-grid">
+          {related.map(r => (
+            <a href={`/software/${r.id.replace(/\.md$/, '')}/`} class="related-card">
+              {r.data.icon && <img src={r.data.icon} alt={r.data.title} class="related-icon" onerror="this.style.display='none'" />}
+              <div>
+                <span class="related-title">{r.data.title}</span>
+                <span class="related-desc">{r.data.description?.slice(0, 60)}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+  .breadcrumb a {
+    color: var(--text-muted);
+  }
+  .breadcrumb a:hover {
+    color: var(--accent-primary);
+  }
+  .breadcrumb .current {
+    color: var(--text-primary);
+  }
+  .detail-header {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+  }
+  .detail-hero {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .detail-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-lg);
+    object-fit: contain;
+    background: var(--bg-tertiary);
+    flex-shrink: 0;
+  }
+  .detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .detail-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+  }
+  .detail-version {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-family: var(--font-mono);
+    color: var(--accent-secondary);
+    background: rgba(63, 185, 80, 0.1);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    width: fit-content;
+  }
+  .detail-meta-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+  }
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    background: rgba(240, 136, 62, 0.1);
+    color: var(--accent-orange);
+    border: 1px solid rgba(240, 136, 62, 0.2);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+  }
+  .detail-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-primary);
+  }
+  .detail-section {
+    margin-top: 32px;
+  }
+  .detail-section h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .detail-description {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    white-space: pre-line;
+  }
+  .screenshots-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .screenshot-img {
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-primary);
+    background: var(--bg-tertiary);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .related-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    transition: all 0.15s;
+  }
+  .related-card:hover {
+    border-color: var(--accent-primary);
+    background: var(--bg-card-hover);
+  }
+  .related-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+    background: var(--bg-tertiary);
+    flex-shrink: 0;
+  }
+  .related-title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+  }
+  .related-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  @media (max-width: 640px) {
+    .detail-hero {
+      flex-direction: column;
+    }
+    .detail-icon {
+      width: 60px;
+      height: 60px;
+    }
+    .detail-title {
+      font-size: 1.375rem;
+    }
+    .detail-header {
+      padding: 20px;
+    }
+  }
+</style>
