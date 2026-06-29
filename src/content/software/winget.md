@@ -1,6 +1,5 @@
 ---
 title: "Winget"
-version: "1.7"
 date: 2026-06-29
 categories: ["开发环境"]
 platforms: ["windows"]

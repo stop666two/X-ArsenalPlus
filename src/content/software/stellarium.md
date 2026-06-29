@@ -1,6 +1,5 @@
 ---
 title: "Stellarium"
-version: "24.2"
 date: 2026-06-29
 categories: ["其他"]
 platforms: ["windows", "macos", "linux"]

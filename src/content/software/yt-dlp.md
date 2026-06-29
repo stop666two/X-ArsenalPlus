@@ -1,6 +1,5 @@
 ---
 title: "yt-dlp"
-version: "2024.8.6"
 date: 2026-06-29
 categories: ["网络工具", "多媒体播放"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "GnuPG"
-version: "2.4.5"
 date: 2026-06-29
 categories: ["安全加密"]
 platforms: ["windows", "macos", "linux"]

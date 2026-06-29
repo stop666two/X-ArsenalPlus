@@ -1,6 +1,5 @@
 ---
 title: "Scribus"
-version: "1.6.2"
 date: 2026-06-29
 categories: ["设计图形", "办公效率"]
 platforms: ["windows", "macos", "linux"]

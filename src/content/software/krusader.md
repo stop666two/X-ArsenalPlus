@@ -1,6 +1,5 @@
 ---
 title: "Krusader"
-version: "2.8"
 date: 2026-06-28
 categories: ["文件管理"]
 platforms: ["linux"]

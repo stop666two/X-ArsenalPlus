@@ -1,6 +1,5 @@
 ---
 title: "BalenaEtcher"
-version: "1.19.25"
 date: 2026-06-29
 categories: ["系统工具"]
 platforms: ["windows", "macos", "linux"]

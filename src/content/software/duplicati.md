@@ -1,6 +1,5 @@
 ---
 title: "Duplicati"
-version: "2.0.7"
 date: 2026-06-29
 categories: ["系统工具", "安全加密"]
 platforms: ["windows", "macos", "linux"]

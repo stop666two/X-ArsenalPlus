@@ -1,6 +1,5 @@
 ---
 title: "LocalSend"
-version: "1.16.1"
 date: 2026-06-23
 categories: ["文件管理", "网络工具"]
 platforms: ["windows", "macos", "linux"]

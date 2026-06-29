@@ -1,6 +1,5 @@
 ---
 title: "Telegram"
-version: "5.2"
 date: 2026-06-28
 categories: ["即时通讯", "安全加密"]
 platforms: ["windows", "macos", "linux"]

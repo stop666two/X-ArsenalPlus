@@ -1,6 +1,5 @@
 ---
 title: "Figma"
-version: "124.0"
 date: 2026-06-28
 categories: ["设计图形"]
 platforms: ["windows", "macos", "linux"]

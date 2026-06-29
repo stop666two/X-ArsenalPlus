@@ -1,6 +1,5 @@
 ---
 title: "Obsidian"
-version: "1.8.9"
 date: 2026-06-29
 categories: ["办公效率", "笔记写作"]
 platforms: ["windows", "macos", "linux"]

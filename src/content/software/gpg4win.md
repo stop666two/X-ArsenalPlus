@@ -1,6 +1,5 @@
 ---
 title: "Gpg4win"
-version: "4.3.1"
 date: 2026-06-29
 categories: ["安全加密"]
 platforms: ["windows"]

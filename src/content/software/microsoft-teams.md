@@ -1,6 +1,5 @@
 ---
 title: "Microsoft Teams"
-version: "1.7"
 date: 2026-06-28
 categories: ["办公效率", "即时通讯"]
 platforms: ["windows", "macos", "linux"]

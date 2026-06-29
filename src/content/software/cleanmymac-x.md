@@ -1,6 +1,5 @@
 ---
 title: "CleanMyMac X"
-version: "4.15"
 date: 2026-06-28
 categories: ["系统工具"]
 platforms: ["macos"]

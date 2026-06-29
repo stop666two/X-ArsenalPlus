@@ -1,6 +1,5 @@
 ---
 title: "Restic"
-version: "0.16.4"
 date: 2026-06-29
 categories: ["系统工具", "安全加密"]
 platforms: ["windows", "macos", "linux"]

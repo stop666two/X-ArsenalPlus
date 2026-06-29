@@ -1,6 +1,5 @@
 ---
 title: "KeePass"
-version: "2.56"
 date: 2026-06-29
 categories: ["安全加密"]
 platforms: ["windows", "macos", "linux"]

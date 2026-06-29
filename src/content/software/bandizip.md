@@ -1,6 +1,5 @@
 ---
 title: "Bandizip"
-version: "7.35"
 date: 2026-06-29
 categories: ["系统工具"]
 platforms: ["windows", "macos"]

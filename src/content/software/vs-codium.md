@@ -1,6 +1,5 @@
 ---
 title: "VS Codium"
-version: "1.100.0"
 date: 2026-06-25
 categories: ["开发环境", "代码编辑器"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "Fantastical"
-version: "3.8"
 date: 2026-06-28
 categories: ["办公效率"]
 platforms: ["macos", "linux"]

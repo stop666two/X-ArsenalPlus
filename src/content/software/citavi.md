@@ -1,6 +1,5 @@
 ---
 title: "Citavi"
-version: "6.18"
 date: 2026-06-29
 categories: ["办公效率"]
 platforms: ["windows"]

@@ -1,6 +1,5 @@
 ---
 title: "Bitwarden"
-version: "2025.6.0"
 date: 2026-06-16
 categories: ["安全加密"]
 platforms: ["windows", "macos", "linux"]

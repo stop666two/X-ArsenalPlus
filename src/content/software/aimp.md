@@ -1,6 +1,5 @@
 ---
 title: "AIMP"
-version: "5.30"
 date: 2026-06-29
 categories: ["多媒体播放"]
 platforms: ["windows"]

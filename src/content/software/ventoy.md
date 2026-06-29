@@ -1,6 +1,5 @@
 ---
 title: "Ventoy"
-version: "1.0.99"
 date: 2026-06-29
 categories: ["系统工具", "容器虚拟化"]
 platforms: ["windows", "macos", "linux"]

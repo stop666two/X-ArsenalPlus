@@ -1,6 +1,5 @@
 ---
 title: "GIMP"
-version: "3.0.4"
 date: 2026-06-29
 categories: ["设计图形"]
 platforms: ["windows", "macos", "linux"]

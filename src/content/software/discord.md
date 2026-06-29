@@ -1,6 +1,5 @@
 ---
 title: "Discord"
-version: "1.0"
 date: 2026-06-28
 categories: ["即时通讯"]
 platforms: ["windows", "macos", "linux"]

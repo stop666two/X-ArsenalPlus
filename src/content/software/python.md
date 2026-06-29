@@ -1,6 +1,5 @@
 ---
 title: "Python"
-version: "3.12.4"
 date: 2026-06-28
 categories: ["开发环境"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "Flameshot"
-version: "12.1.0"
 date: 2026-06-20
 categories: ["截图录屏"]
 platforms: ["windows", "macos", "linux"]

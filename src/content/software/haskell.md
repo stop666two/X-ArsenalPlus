@@ -1,6 +1,5 @@
 ---
 title: "Haskell"
-version: "8.10.7"
 date: 2026-06-29
 categories: ["开发环境"]
 platforms: ["windows", "macos", "linux"]

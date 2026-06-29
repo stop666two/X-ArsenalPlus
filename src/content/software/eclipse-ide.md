@@ -1,6 +1,5 @@
 ---
 title: "Eclipse IDE"
-version: "2024-06"
 date: 2026-06-28
 categories: ["代码编辑器", "开发环境"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "iA Writer"
-version: "7.3"
 date: 2026-06-28
 categories: ["笔记写作"]
 platforms: ["windows", "macos", "linux"]

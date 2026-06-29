@@ -1,6 +1,5 @@
 ---
 title: "火绒安全"
-version: "6.0"
 date: 2026-06-28
 categories: ["安全加密", "系统工具"]
 platforms: ["windows"]

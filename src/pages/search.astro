@@ -10,7 +10,6 @@ const searchData = Buffer.from(JSON.stringify(
     d: s.data.description?.slice(0, 200) || '',
     c: s.data.categories.join('、'),
     g: s.data.tags || [],
-    v: s.data.version || '',
     p: s.data.platforms || []
   }))
 )).toString('base64');

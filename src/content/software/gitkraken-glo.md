@@ -1,6 +1,5 @@
 ---
 title: "GitKraken Glo"
-version: "2.5"
 date: 2026-06-29
 categories: ["办公效率", "开发环境"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "DaVinci Resolve"
-version: "19.0"
 date: 2026-06-28
 categories: ["视频编辑"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "Godot Engine"
-version: "4.2"
 date: 2026-06-28
 categories: ["开发环境", "游戏娱乐"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "OBS Studio"
-version: "31.0.2"
 date: 2026-06-05
 categories: ["截图录屏"]
 platforms: ["windows", "macos", "linux"]

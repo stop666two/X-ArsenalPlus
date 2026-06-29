@@ -1,6 +1,5 @@
 ---
 title: "Git LFS"
-version: "3.5.1"
 date: 2026-06-29
 categories: ["开发环境", "版本控制"]
 platforms: ["windows", "macos", "linux"]

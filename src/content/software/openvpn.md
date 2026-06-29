@@ -1,6 +1,5 @@
 ---
 title: "OpenVPN"
-version: "2.6.10"
 date: 2026-06-29
 categories: ["安全加密", "网络工具"]
 platforms: ["windows", "macos", "linux"]

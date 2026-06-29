@@ -1,6 +1,5 @@
 ---
 title: "Cloudflare WARP"
-version: "2024.6"
 date: 2026-06-29
 categories: ["网络工具", "安全加密"]
 platforms: ["windows", "macos", "linux"]

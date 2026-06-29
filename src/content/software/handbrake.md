@@ -1,6 +1,5 @@
 ---
 title: "HandBrake"
-version: "1.10.2"
 date: 2026-06-29
 categories: ["视频编辑"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "GitKraken"
-version: "10.0"
 date: 2026-06-29
 categories: ["开发环境", "版本控制"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "Ulysses"
-version: "34.0"
 date: 2026-06-28
 categories: ["笔记写作", "办公效率"]
 platforms: ["macos", "linux"]

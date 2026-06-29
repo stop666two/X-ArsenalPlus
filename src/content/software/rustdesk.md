@@ -1,6 +1,5 @@
 ---
 title: "RustDesk"
-version: "1.2"
 date: 2026-06-28
 categories: ["网络工具", "远程控制"]
 platforms: ["windows", "macos", "linux"]

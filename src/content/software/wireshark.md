@@ -1,6 +1,5 @@
 ---
 title: "Wireshark"
-version: "4.4.5"
 date: 2026-06-18
 categories: ["网络工具", "安全加密"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "Geek Uninstaller"
-version: "1.5.2"
 date: 2026-06-28
 categories: ["系统工具"]
 platforms: ["windows"]

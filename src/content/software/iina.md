@@ -1,6 +1,5 @@
 ---
 title: "IINA"
-version: "1.3.5"
 date: 2026-06-28
 categories: ["多媒体播放"]
 platforms: ["macos"]

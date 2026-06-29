@@ -1,6 +1,5 @@
 ---
 title: "Miro"
-version: "2024.06"
 date: 2026-06-28
 categories: ["办公效率", "设计图形"]
 platforms: ["windows", "macos", "linux"]

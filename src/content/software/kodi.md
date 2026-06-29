@@ -1,6 +1,5 @@
 ---
 title: "Kodi"
-version: "21.0"
 date: 2026-06-29
 categories: ["多媒体播放"]
 platforms: ["windows", "macos", "linux"]

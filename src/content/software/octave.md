@@ -1,6 +1,5 @@
 ---
 title: "GNU Octave"
-version: "9.1.0"
 date: 2026-06-29
 categories: ["开发环境"]
 platforms: ["windows", "macos", "linux"]

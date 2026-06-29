@@ -1,6 +1,5 @@
 ---
 title: "Audacious"
-version: "4.4"
 date: 2026-06-29
 categories: ["多媒体播放"]
 platforms: ["linux"]

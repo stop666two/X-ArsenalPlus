@@ -1,6 +1,5 @@
 ---
 title: "Thunderbird"
-version: "128.0"
 date: 2026-06-29
 categories: ["办公效率", "网络工具"]
 platforms: ["windows", "macos", "linux"]

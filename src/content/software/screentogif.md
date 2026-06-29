@@ -1,6 +1,5 @@
 ---
 title: "ScreenToGif"
-version: "2.41"
 date: 2026-06-29
 categories: ["截图录屏"]
 platforms: ["windows"]

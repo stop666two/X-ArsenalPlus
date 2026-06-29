@@ -1,6 +1,5 @@
 ---
 title: "DeadBeef"
-version: "1.9.6"
 date: 2026-06-29
 categories: ["多媒体播放"]
 platforms: ["linux"]

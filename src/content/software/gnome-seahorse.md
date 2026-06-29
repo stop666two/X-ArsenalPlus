@@ -1,6 +1,5 @@
 ---
 title: "Gnome Seahorse"
-version: "43.0"
 date: 2026-06-29
 categories: ["安全加密"]
 platforms: ["linux"]

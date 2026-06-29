@@ -1,6 +1,5 @@
 ---
 title: "SpaceSniffer"
-version: "1.3"
 date: 2026-06-29
 categories: ["系统工具"]
 platforms: ["windows"]

@@ -1,6 +1,5 @@
 ---
 title: "Apache Maven"
-version: "3.9.8"
 date: 2026-06-29
 categories: ["开发环境"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "OpenSSL"
-version: "3.3.0"
 date: 2026-06-28
 categories: ["安全加密", "开发环境"]
 platforms: ["windows", "macos", "linux"]

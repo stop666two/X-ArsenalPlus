@@ -1,6 +1,5 @@
 ---
 title: "Honeyview"
-version: "5.50"
 date: 2026-06-28
 categories: ["多媒体播放"]
 platforms: ["windows"]

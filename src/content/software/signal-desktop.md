@@ -1,6 +1,5 @@
 ---
 title: "Signal Desktop"
-version: "7.48.0"
 date: 2026-06-15
 categories: ["即时通讯", "安全加密"]
 platforms: ["windows", "macos", "linux"]

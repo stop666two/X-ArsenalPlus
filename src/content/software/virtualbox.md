@@ -1,6 +1,5 @@
 ---
 title: "VirtualBox"
-version: "7.1.6"
 date: 2026-06-20
 categories: ["容器虚拟化", "系统工具"]
 platforms: ["windows", "macos", "linux"]

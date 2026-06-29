@@ -1,6 +1,5 @@
 ---
 title: "Natron"
-version: "2.5.0"
 date: 2026-06-29
 categories: ["设计图形", "视频编辑"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "Joplin"
-version: "3.0"
 date: 2026-06-28
 categories: ["笔记写作"]
 platforms: ["windows", "macos", "linux"]

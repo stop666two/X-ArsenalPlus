@@ -1,6 +1,5 @@
 ---
 title: "Clash Verge"
-version: "1.7.0"
 date: 2026-06-28
 categories: ["网络工具", "安全加密"]
 platforms: ["windows", "macos", "linux"]

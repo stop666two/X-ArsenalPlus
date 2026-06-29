@@ -1,6 +1,5 @@
 ---
 title: "Alfred"
-version: "5.5"
 date: 2026-06-28
 categories: ["系统工具", "办公效率"]
 platforms: ["macos"]

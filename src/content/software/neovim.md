@@ -1,6 +1,5 @@
 ---
 title: "Neovim"
-version: "0.10.0"
 date: 2026-06-28
 categories: ["开发环境", "代码编辑器"]
 platforms: ["windows", "macos", "linux"]

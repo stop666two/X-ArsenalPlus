@@ -1,6 +1,5 @@
 ---
 title: "Screenkey"
-version: "0.9"
 date: 2026-06-29
 categories: ["系统工具", "截图录屏"]
 platforms: ["linux"]

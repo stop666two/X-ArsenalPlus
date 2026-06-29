@@ -1,6 +1,5 @@
 ---
 title: "Magnet"
-version: "2.14"
 date: 2026-06-28
 categories: ["系统工具"]
 platforms: ["macos"]

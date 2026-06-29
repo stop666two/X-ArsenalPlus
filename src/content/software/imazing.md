@@ -1,6 +1,5 @@
 ---
 title: "iMazing"
-version: "3.0"
 date: 2026-06-28
 categories: ["系统工具", "文件管理"]
 platforms: ["windows", "macos"]

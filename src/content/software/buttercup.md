@@ -1,6 +1,5 @@
 ---
 title: "Buttercup"
-version: "2.23"
 date: 2026-06-29
 categories: ["安全加密"]
 platforms: ["windows", "macos", "linux"]

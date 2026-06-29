@@ -1,6 +1,5 @@
 ---
 title: "Avidemux"
-version: "2.8.1"
 date: 2026-06-29
 categories: ["多媒体播放", "视频编辑"]
 platforms: ["windows", "macos", "linux"]

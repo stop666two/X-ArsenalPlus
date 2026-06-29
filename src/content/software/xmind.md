@@ -1,6 +1,5 @@
 ---
 title: "Xmind"
-version: "24.04"
 date: 2026-06-28
 categories: ["办公效率"]
 platforms: ["windows", "macos", "linux"]

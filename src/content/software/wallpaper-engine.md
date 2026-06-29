@@ -1,6 +1,5 @@
 ---
 title: "Wallpaper Engine"
-version: "2024"
 date: 2026-06-28
 categories: ["系统工具"]
 platforms: ["windows"]

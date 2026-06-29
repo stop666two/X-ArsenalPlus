@@ -1,6 +1,5 @@
 ---
 title: "Git"
-version: "2.45"
 date: 2026-06-28
 categories: ["版本控制", "开发环境"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "Olive"
-version: "0.1.0"
 date: 2026-06-29
 categories: ["视频编辑"]
 platforms: ["windows", "macos", "linux"]

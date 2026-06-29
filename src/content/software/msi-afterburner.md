@@ -1,6 +1,5 @@
 ---
 title: "MSI Afterburner"
-version: "4.6.5"
 date: 2026-06-28
 categories: ["系统工具", "系统监控"]
 platforms: ["windows"]

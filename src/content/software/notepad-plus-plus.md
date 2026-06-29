@@ -1,6 +1,5 @@
 ---
 title: "Notepad++"
-version: "8.7.9"
 date: 2026-06-25
 categories: ["开发环境", "代码编辑器"]
 platforms: ["windows"]

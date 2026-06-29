@@ -1,6 +1,5 @@
 ---
 title: "Sylpheed"
-version: "3.7"
 date: 2026-06-29
 categories: ["办公效率"]
 platforms: ["windows", "macos", "linux"]

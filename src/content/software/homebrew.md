@@ -1,6 +1,5 @@
 ---
 title: "Homebrew"
-version: "4.3.0"
 date: 2026-06-29
 categories: ["开发环境"]
 platforms: ["macos", "linux"]

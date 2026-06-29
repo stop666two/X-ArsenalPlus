@@ -1,6 +1,5 @@
 ---
 title: "Inkscape"
-version: "1.4"
 date: 2026-06-21
 categories: ["设计图形"]
 platforms: ["windows", "macos", "linux"]

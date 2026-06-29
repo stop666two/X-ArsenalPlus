@@ -1,6 +1,5 @@
 ---
 title: "Audacity"
-version: "3.7.3"
 date: 2026-06-22
 categories: ["多媒体播放"]
 platforms: ["windows", "macos", "linux"]

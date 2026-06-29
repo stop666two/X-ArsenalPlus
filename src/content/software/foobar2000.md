@@ -1,6 +1,5 @@
 ---
 title: "Foobar2000"
-version: "2.1"
 date: 2026-06-29
 categories: ["多媒体播放"]
 platforms: ["windows"]

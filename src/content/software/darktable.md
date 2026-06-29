@@ -1,6 +1,5 @@
 ---
 title: "Darktable"
-version: "4.8.0"
 date: 2026-06-29
 categories: ["设计图形"]
 platforms: ["windows", "macos", "linux"]

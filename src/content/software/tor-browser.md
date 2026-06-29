@@ -1,6 +1,5 @@
 ---
 title: "Tor Browser"
-version: "13.5"
 date: 2026-06-29
 categories: ["网络工具", "安全加密"]
 platforms: ["windows", "macos", "linux"]

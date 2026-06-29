@@ -1,6 +1,5 @@
 ---
 title: "PotPlayer"
-version: "240618"
 date: 2026-06-28
 categories: ["多媒体播放"]
 platforms: ["windows"]

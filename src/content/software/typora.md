@@ -1,6 +1,5 @@
 ---
 title: "Typora"
-version: "1.9"
 date: 2026-06-28
 categories: ["笔记写作", "办公效率"]
 platforms: ["windows", "macos", "linux"]

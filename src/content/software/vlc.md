@@ -1,6 +1,5 @@
 ---
 title: "VLC Media Player"
-version: "3.6.4"
 date: 2026-06-29
 categories: ["多媒体播放"]
 platforms: ["windows", "macos", "linux"]

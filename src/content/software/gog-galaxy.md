@@ -1,6 +1,5 @@
 ---
 title: "GOG Galaxy"
-version: "2.0"
 date: 2026-06-28
 categories: ["游戏娱乐"]
 platforms: ["windows", "macos", "linux"]

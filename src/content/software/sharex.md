@@ -1,6 +1,5 @@
 ---
 title: "ShareX"
-version: "16.1"
 date: 2026-06-29
 categories: ["截图录屏", "系统工具"]
 platforms: ["windows"]

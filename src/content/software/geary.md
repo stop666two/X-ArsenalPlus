@@ -1,6 +1,5 @@
 ---
 title: "Geary"
-version: "43.0"
 date: 2026-06-29
 categories: ["办公效率"]
 platforms: ["linux"]

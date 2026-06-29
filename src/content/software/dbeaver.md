@@ -1,6 +1,5 @@
 ---
 title: "DBeaver"
-version: "24.3.5"
 date: 2026-06-29
 categories: ["数据库管理", "开发环境"]
 platforms: ["windows", "macos", "linux"]

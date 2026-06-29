@@ -1,6 +1,5 @@
 ---
 title: "CCleaner"
-version: "6.25"
 date: 2026-06-28
 categories: ["系统工具"]
 platforms: ["windows", "macos"]

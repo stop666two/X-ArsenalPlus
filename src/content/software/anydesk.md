@@ -1,6 +1,5 @@
 ---
 title: "AnyDesk"
-version: "8.0"
 date: 2026-06-28
 categories: ["远程控制"]
 platforms: ["windows", "macos", "linux"]

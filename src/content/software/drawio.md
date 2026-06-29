@@ -1,6 +1,5 @@
 ---
 title: "draw.io"
-version: "26.1.0"
 date: 2026-06-23
 categories: ["办公效率", "设计图形"]
 platforms: ["windows", "macos", "linux"]

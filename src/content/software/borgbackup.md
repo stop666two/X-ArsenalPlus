@@ -1,6 +1,5 @@
 ---
 title: "BorgBackup"
-version: "1.2.8"
 date: 2026-06-29
 categories: ["系统工具", "安全加密"]
 platforms: ["linux", "macos"]

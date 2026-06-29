@@ -1,6 +1,5 @@
 ---
 title: "MiniTool Power Data Recovery"
-version: "12.0"
 date: 2026-06-29
 categories: ["系统工具"]
 platforms: ["windows"]

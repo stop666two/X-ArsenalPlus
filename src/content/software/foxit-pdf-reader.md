@@ -1,6 +1,5 @@
 ---
 title: "Foxit PDF Reader"
-version: "2024.2"
 date: 2026-06-28
 categories: ["办公效率"]
 platforms: ["windows", "macos", "linux"]

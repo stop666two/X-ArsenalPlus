@@ -1,6 +1,5 @@
 ---
 title: "CrossOver"
-version: "26.0"
 date: 2026-06-28
 categories: ["系统工具", "容器虚拟化"]
 platforms: ["macos", "linux"]

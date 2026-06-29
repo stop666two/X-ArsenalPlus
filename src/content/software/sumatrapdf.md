@@ -1,6 +1,5 @@
 ---
 title: "SumatraPDF"
-version: "3.5.2"
 date: 2026-06-24
 categories: ["办公效率", "文件管理"]
 platforms: ["windows"]

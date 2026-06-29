@@ -1,6 +1,5 @@
 ---
 title: "DownThemAll!"
-version: "4.11"
 date: 2026-06-29
 categories: ["网络工具"]
 platforms: ["windows", "macos", "linux"]

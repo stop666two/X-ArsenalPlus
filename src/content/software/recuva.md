@@ -1,6 +1,5 @@
 ---
 title: "Recuva"
-version: "1.53"
 date: 2026-06-29
 categories: ["系统工具"]
 platforms: ["windows"]

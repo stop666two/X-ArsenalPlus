@@ -1,6 +1,5 @@
 ---
 title: "Cryptomator"
-version: "1.12.0"
 date: 2026-06-28
 categories: ["安全加密"]
 platforms: ["windows", "macos", "linux"]

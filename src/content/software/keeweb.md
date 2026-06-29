@@ -1,6 +1,5 @@
 ---
 title: "KeeWeb"
-version: "1.18.7"
 date: 2026-06-29
 categories: ["安全加密"]
 platforms: ["windows", "macos", "linux"]

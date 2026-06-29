@@ -1,6 +1,5 @@
 ---
 title: "Deluge"
-version: "2.1.1"
 date: 2026-06-29
 categories: ["网络工具"]
 platforms: ["windows", "macos", "linux"]

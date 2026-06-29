@@ -1,6 +1,5 @@
 ---
 title: "Kazam"
-version: "1.4.5"
 date: 2026-06-28
 categories: ["截图录屏"]
 platforms: ["linux"]

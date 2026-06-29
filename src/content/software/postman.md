@@ -1,6 +1,5 @@
 ---
 title: "Postman"
-version: "11.0"
 date: 2026-06-28
 categories: ["开发环境"]
 platforms: ["windows", "macos", "linux"]

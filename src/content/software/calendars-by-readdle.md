@@ -1,6 +1,5 @@
 ---
 title: "Calendars by Readdle"
-version: "6.0"
 date: 2026-06-29
 categories: ["办公效率"]
 platforms: ["windows", "macos", "linux"]

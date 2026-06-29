@@ -1,6 +1,5 @@
 ---
 title: "Pixelmator Pro"
-version: "3.5"
 date: 2026-06-28
 categories: ["设计图形"]
 platforms: ["macos"]

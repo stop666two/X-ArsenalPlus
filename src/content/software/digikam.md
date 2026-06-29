@@ -1,6 +1,5 @@
 ---
 title: "digiKam"
-version: "8.3.0"
 date: 2026-06-29
 categories: ["设计图形"]
 platforms: ["windows", "macos", "linux"]

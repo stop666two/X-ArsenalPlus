@@ -1,6 +1,5 @@
 ---
 title: "Krita"
-version: "5.2.2"
 date: 2026-06-28
 categories: ["设计图形"]
 platforms: ["windows", "macos", "linux"]

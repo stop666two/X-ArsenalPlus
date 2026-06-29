@@ -1,6 +1,5 @@
 ---
 title: "OBS Virtual Camera"
-version: "30.2.0"
 date: 2026-06-28
 categories: ["截图录屏"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "PlayStation Remote Play"
-version: "6.5"
 date: 2026-06-28
 categories: ["游戏娱乐", "远程控制"]
 platforms: ["windows", "macos", "linux"]

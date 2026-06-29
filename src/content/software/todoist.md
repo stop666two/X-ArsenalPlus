@@ -1,6 +1,5 @@
 ---
 title: "Todoist"
-version: "9.0"
 date: 2026-06-28
 categories: ["办公效率"]
 platforms: ["windows", "macos", "linux"]

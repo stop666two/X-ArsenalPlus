@@ -1,6 +1,5 @@
 ---
 title: "LazyDocker"
-version: "0.23"
 date: 2026-06-29
 categories: ["开发环境", "容器虚拟化"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "Affinity Designer"
-version: "2.5"
 date: 2026-06-28
 categories: ["设计图形"]
 platforms: ["windows", "macos", "linux"]

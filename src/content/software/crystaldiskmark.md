@@ -1,6 +1,5 @@
 ---
 title: "CrystalDiskMark"
-version: "8.0.5"
 date: 2026-06-28
 categories: ["系统监控", "系统工具"]
 platforms: ["windows"]

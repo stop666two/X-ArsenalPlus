@@ -1,6 +1,5 @@
 ---
 title: "Docker Desktop"
-version: "4.32"
 date: 2026-06-28
 categories: ["容器虚拟化", "开发环境"]
 platforms: ["windows", "macos", "linux"]

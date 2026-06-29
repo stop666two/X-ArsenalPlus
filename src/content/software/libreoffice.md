@@ -1,6 +1,5 @@
 ---
 title: "LibreOffice"
-version: "25.8.4"
 date: 2026-06-29
 categories: ["办公效率"]
 platforms: ["windows", "macos", "linux"]

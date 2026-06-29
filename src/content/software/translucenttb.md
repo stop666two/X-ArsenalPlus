@@ -1,6 +1,5 @@
 ---
 title: "TranslucentTB"
-version: "2024.1"
 date: 2026-06-28
 categories: ["系统工具"]
 platforms: ["windows"]

@@ -1,6 +1,5 @@
 ---
 title: "GitHub Desktop"
-version: "3.4"
 date: 2026-06-28
 categories: ["版本控制"]
 platforms: ["windows", "macos"]

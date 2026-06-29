@@ -1,6 +1,5 @@
 ---
 title: "剪映"
-version: "5.9.0"
 date: 2026-06-28
 categories: ["视频编辑"]
 platforms: ["windows", "macos"]

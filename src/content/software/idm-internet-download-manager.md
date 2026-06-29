@@ -1,6 +1,5 @@
 ---
 title: "IDM (Internet Download Manager)"
-version: "6.42"
 date: 2026-06-28
 categories: ["网络工具"]
 platforms: ["windows"]

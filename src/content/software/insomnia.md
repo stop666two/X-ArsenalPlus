@@ -1,6 +1,5 @@
 ---
 title: "Insomnia"
-version: "2024.1"
 date: 2026-06-29
 categories: ["开发环境"]
 platforms: ["windows", "macos", "linux"]

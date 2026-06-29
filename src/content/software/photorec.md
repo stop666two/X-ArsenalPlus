@@ -1,6 +1,5 @@
 ---
 title: "PhotoRec"
-version: "7.2"
 date: 2026-06-29
 categories: ["系统工具", "安全加密"]
 platforms: ["windows", "macos", "linux"]

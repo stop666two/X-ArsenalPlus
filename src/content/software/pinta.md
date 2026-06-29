@@ -1,6 +1,5 @@
 ---
 title: "Pinta"
-version: "2.1.2"
 date: 2026-06-29
 categories: ["设计图形"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "DropIt"
-version: "8.5.1"
 date: 2026-06-28
 categories: ["文件管理", "系统工具"]
 platforms: ["windows"]

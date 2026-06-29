@@ -1,6 +1,5 @@
 ---
 title: "PuTTY"
-version: "0.83"
 date: 2026-06-19
 categories: ["网络工具", "远程控制"]
 platforms: ["windows", "linux"]

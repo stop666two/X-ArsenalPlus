@@ -1,6 +1,5 @@
 ---
 title: "KeePassXC"
-version: "2.7.10"
 date: 2026-06-29
 categories: ["安全加密"]
 platforms: ["windows", "macos", "linux"]

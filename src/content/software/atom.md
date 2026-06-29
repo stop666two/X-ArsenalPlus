@@ -1,6 +1,5 @@
 ---
 title: "Atom"
-version: "1.60"
 date: 2026-06-28
 categories: ["代码编辑器", "开发环境"]
 platforms: ["windows", "macos", "linux"]

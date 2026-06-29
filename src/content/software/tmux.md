@@ -1,6 +1,5 @@
 ---
 title: "tmux"
-version: "3.4"
 date: 2026-06-28
 categories: ["开发环境"]
 platforms: ["linux", "macos"]

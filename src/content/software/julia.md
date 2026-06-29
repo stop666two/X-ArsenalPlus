@@ -1,6 +1,5 @@
 ---
 title: "Julia"
-version: "1.10.4"
 date: 2026-06-29
 categories: ["开发环境"]
 platforms: ["windows", "macos", "linux"]

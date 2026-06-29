@@ -16,7 +16,6 @@ const downloads = z.object({
 
 const softwareSchema = z.object({
   title: z.string(),
-  version: z.string().optional(),
   date: z.date(),
   categories: z.array(z.string()),
   platforms: z.array(z.string()),

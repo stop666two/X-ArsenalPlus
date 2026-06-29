@@ -1,6 +1,5 @@
 ---
 title: "7-Zip"
-version: "24.09"
 date: 2026-06-20
 categories: ["文件管理", "系统工具"]
 platforms: ["windows", "linux"]

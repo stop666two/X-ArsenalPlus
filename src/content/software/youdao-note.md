@@ -1,6 +1,5 @@
 ---
 title: "有道云笔记"
-version: "7.4"
 date: 2026-06-28
 categories: ["笔记写作", "办公效率"]
 platforms: ["windows", "macos", "linux"]

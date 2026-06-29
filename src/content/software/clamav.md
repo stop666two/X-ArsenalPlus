@@ -1,6 +1,5 @@
 ---
 title: "ClamAV"
-version: "1.4.0"
 date: 2026-06-28
 categories: ["安全加密", "系统工具"]
 platforms: ["windows", "macos", "linux"]

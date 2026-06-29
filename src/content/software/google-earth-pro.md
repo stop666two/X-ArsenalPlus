@@ -1,6 +1,5 @@
 ---
 title: "Google Earth Pro"
-version: "7.3.6"
 date: 2026-06-29
 categories: ["其他"]
 platforms: ["windows", "macos", "linux"]

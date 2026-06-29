@@ -1,6 +1,5 @@
 ---
 title: "Foxit PhantomPDF"
-version: "2024.3"
 date: 2026-06-29
 categories: ["办公效率"]
 platforms: ["windows"]

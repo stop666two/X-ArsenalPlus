@@ -1,6 +1,5 @@
 ---
 title: "Things"
-version: "3.20"
 date: 2026-06-28
 categories: ["办公效率"]
 platforms: ["macos", "linux"]

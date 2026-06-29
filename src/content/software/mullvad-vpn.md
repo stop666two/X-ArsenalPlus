@@ -1,6 +1,5 @@
 ---
 title: "Mullvad VPN"
-version: "2024.5"
 date: 2026-06-29
 categories: ["安全加密"]
 platforms: ["windows", "macos", "linux"]

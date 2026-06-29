@@ -1,6 +1,5 @@
 ---
 title: "Mutt"
-version: "2.2.13"
 date: 2026-06-29
 categories: ["办公效率"]
 platforms: ["linux", "macos"]

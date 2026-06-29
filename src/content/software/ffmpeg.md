@@ -1,6 +1,5 @@
 ---
 title: "ffmpeg"
-version: "7.0"
 date: 2026-06-28
 categories: ["多媒体播放", "视频编辑"]
 platforms: ["windows", "macos", "linux"]

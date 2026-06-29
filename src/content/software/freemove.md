@@ -1,6 +1,5 @@
 ---
 title: "FreeMove"
-version: "2.1"
 date: 2026-06-28
 categories: ["系统工具", "文件管理"]
 platforms: ["windows"]

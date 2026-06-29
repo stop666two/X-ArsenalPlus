@@ -1,6 +1,5 @@
 ---
 title: "BuhoCleaner"
-version: "1.13"
 date: 2026-06-28
 categories: ["系统工具"]
 platforms: ["macos"]

@@ -1,6 +1,5 @@
 ---
 title: "Alacritty"
-version: "0.14.1"
 date: 2026-06-18
 categories: ["开发环境"]
 platforms: ["windows", "macos", "linux"]

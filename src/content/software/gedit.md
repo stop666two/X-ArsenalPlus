@@ -1,6 +1,5 @@
 ---
 title: "Gedit"
-version: "46.2"
 date: 2026-06-28
 categories: ["代码编辑器"]
 platforms: ["linux"]

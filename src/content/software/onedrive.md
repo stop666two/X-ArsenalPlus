@@ -1,6 +1,5 @@
 ---
 title: "OneDrive"
-version: "2024"
 date: 2026-06-28
 categories: ["网络工具", "文件管理"]
 platforms: ["windows", "macos", "linux"]

@@ -1,6 +1,5 @@
 ---
 title: "Syncthing"
-version: "1.27.8"
 date: 2026-06-29
 categories: ["网络工具"]
 platforms: ["windows", "macos", "linux"]

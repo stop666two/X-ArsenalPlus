@@ -1,6 +1,5 @@
 ---
 title: "MEGA"
-version: "5.0"
 date: 2026-06-28
 categories: ["文件管理", "安全加密"]
 platforms: ["windows", "macos", "linux"]

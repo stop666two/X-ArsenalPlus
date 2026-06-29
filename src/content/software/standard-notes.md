@@ -1,6 +1,5 @@
 ---
 title: "Standard Notes"
-version: "3.195"
 date: 2026-06-28
 categories: ["笔记写作", "安全加密"]
 platforms: ["windows", "macos", "linux"]

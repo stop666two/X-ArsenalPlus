@@ -1,6 +1,5 @@
 ---
 title: "TreeSize"
-version: "9.1"
 date: 2026-06-29
 categories: ["系统工具"]
 platforms: ["windows"]

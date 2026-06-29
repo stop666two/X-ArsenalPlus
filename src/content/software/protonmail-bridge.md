@@ -1,6 +1,5 @@
 ---
 title: "ProtonMail Bridge"
-version: "3.9"
 date: 2026-06-29
 categories: ["安全加密", "办公效率"]
 platforms: ["windows", "macos", "linux"]

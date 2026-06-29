@@ -1,6 +1,5 @@
 ---
 title: "OpenShot"
-version: "3.2.1"
 date: 2026-06-29
 categories: ["视频编辑"]
 platforms: ["windows", "macos", "linux"]

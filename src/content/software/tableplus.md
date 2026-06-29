@@ -1,6 +1,5 @@
 ---
 title: "TablePlus"
-version: "5.9"
 date: 2026-06-28
 categories: ["开发环境", "数据库管理"]
 platforms: ["windows", "macos", "linux"]
