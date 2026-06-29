@@ -15,19 +15,19 @@ description: "Wireshark 是全球最广泛使用的网络协议分析器，由 W
 downloads:
   windows:
     - label: "官方下载"
-      url: "https://www.wireshark.org/download/win64/Wireshark-4.4.5-x64.exe"
+      url: "https://www.wireshark.org/download.html"
       type: "exe"
       size: "82 MB"
       recommended: true
   macos:
     - label: "官方下载"
-      url: "https://www.wireshark.org/download/osx/Wireshark-4.4.5-arm64.dmg"
+      url: "https://www.wireshark.org/download.html"
       type: "dmg"
       size: "95 MB"
       recommended: true
   linux:
     - label: "官方下载"
-      url: "https://www.wireshark.org/download/linux/wireshark-4.4.5.deb"
+      url: "https://www.wireshark.org/download.html"
       type: "deb"
       size: "70 MB"
 download_count: 28400

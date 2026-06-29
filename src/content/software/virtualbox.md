@@ -15,19 +15,19 @@ description: "VirtualBox 是由 Oracle 开发的开源虚拟机软件，支持�
 downloads:
   windows:
     - label: "官方下载"
-      url: "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1.6-Win.exe"
+      url: "https://www.virtualbox.org/wiki/Downloads"
       type: "exe"
       size: "108 MB"
       recommended: true
   macos:
     - label: "官方下载"
-      url: "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1.6-OSX.dmg"
+      url: "https://www.virtualbox.org/wiki/Downloads"
       type: "dmg"
       size: "125 MB"
       recommended: true
   linux:
     - label: "官方下载"
-      url: "https://download.virtualbox.org/virtualbox/7.1.6/virtualbox-7.1_7.1.6.deb"
+      url: "https://www.virtualbox.org/wiki/Downloads"
       type: "deb"
       size: "95 MB"
 download_count: 35200

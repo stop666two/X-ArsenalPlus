@@ -14,13 +14,16 @@ badges: ["开源", "绿色免安装", "极致轻量"]
 description: "7-Zip 是世界上最知名的开源压缩软件，支持 7z、ZIP、RAR、TAR、GZIP 等数十种压缩格式。7z 格式的压缩率优于同类软件 2-10%。极小的体积（1.5MB）却提供了强大的文件管理器集成、命令行支持和 AES-256 加密功能。"
 downloads:
   windows:
-    - label: "官方下载 (64位安装版)"
-      url: "https://www.7-zip.org/a/7z2409-x64.exe"
+    - label: "官网下载 (64位)"
+      url: "https://www.7-zip.org/download.html"
       type: "exe"
       size: "1.5 MB"
       recommended: true
+    - label: "SourceForge (自动最新版)"
+      url: "https://sourceforge.net/projects/sevenzip/files/latest/download"
+      type: "exe"
     - label: "便携版 (ZIP)"
-      url: "https://www.7-zip.org/a/7z2409-extra.7z"
+      url: "https://www.7-zip.org/download.html"
       type: "7z"
       size: "1.9 MB"
   linux:
