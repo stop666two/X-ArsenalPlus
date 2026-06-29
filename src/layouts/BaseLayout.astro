@@ -11,16 +11,14 @@ export interface Props {
 const { title, description } = Astro.props;
 
 const allSoftware = await getCollection('software');
-const searchJSON = JSON.stringify(
-  allSoftware.map(s => ({
-    t: s.data.title,
-    u: `/software/${s.id.replace(/\.md$/, '')}/`,
-    d: s.data.description?.slice(0, 180) || '',
-    c: s.data.categories,
-    g: s.data.tags || [],
-    v: s.data.version || ''
-  }))
-).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026');
+const searchIndex = allSoftware.map(s => ({
+  t: s.data.title,
+  u: `/software/${s.id.replace(/\.md$/, '')}/`,
+  d: s.data.description?.slice(0, 180) || '',
+  c: s.data.categories.join(', '),
+  g: s.data.tags || [],
+  v: s.data.version || ''
+}));
 ---
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -40,6 +38,7 @@ const searchJSON = JSON.stringify(
     </main>
     <Footer />
     <button class="scroll-top-btn" id="scroll-top" aria-label="回到顶部" title="回到顶部">↑</button>
+    <script id="search-data" type="application/json">{JSON.stringify(searchIndex)}</script>
     <script is:inline>
       (function() {
         var saved = localStorage.getItem('theme');
@@ -78,38 +77,40 @@ const searchJSON = JSON.stringify(
       });
     </script>
     <script is:inline>
-      const SEARCH_DATA = {searchJSON};
-
+      var el = document.getElementById('search-data');
+      var SEARCH_DATA = el ? JSON.parse(el.textContent || '[]') : [];
 
       function matchSoftware(item, query) {
-        const q = query.toLowerCase();
-        const fields = [item.t, item.d, ...item.c, ...item.g, item.v];
-        return fields.some(f => f.toLowerCase().includes(q));
+        var q = query.toLowerCase();
+        var fields = [item.t, item.d, item.c, item.v].concat(item.g || []);
+        return fields.some(function(f) { return f.toLowerCase().indexOf(q) !== -1; });
       }
 
-      window.addEventListener('DOMContentLoaded', () => {
-        const input = document.getElementById('search-input');
-        const results = document.getElementById('search-results');
-        const overlay = document.getElementById('search-overlay');
+      (function() {
+        var input = document.getElementById('search-input');
+        var results = document.getElementById('search-results');
+        var overlay = document.getElementById('search-overlay');
         if (!input || !results || !overlay) return;
 
-        let timer = null;
+        var timer = null;
 
         function render(items) {
           if (items.length === 0) {
             results.innerHTML = '<div class="search-empty">未找到相关软件</div>';
             return;
           }
-          results.innerHTML = items.slice(0, 12).map(s => `<a class="search-item" href="${s.u}">
-            <span class="search-item-title">${s.t} <small style="color:var(--text-muted)">v${s.v}</small></span>
-            <span class="search-item-desc">${s.d.slice(0, 120)}</span>
-            <span class="search-item-meta">${s.c}</span>
-          </a>`).join('');
+          results.innerHTML = items.slice(0, 12).map(function(s) {
+            return '<a class="search-item" href="' + s.u + '">' +
+              '<span class="search-item-title">' + s.t + ' <small style="color:var(--text-muted)">v' + s.v + '</small></span>' +
+              '<span class="search-item-desc">' + (s.d || '').slice(0, 120) + '</span>' +
+              '<span class="search-item-meta">' + s.c + '</span>' +
+              '</a>';
+          }).join('');
         }
 
-        input.addEventListener('input', () => {
+        input.addEventListener('input', function() {
           clearTimeout(timer);
-          const q = input.value.trim();
+          var q = input.value.trim();
           if (q.length < 1) {
             overlay.classList.remove('active');
             results.innerHTML = '';
@@ -117,24 +118,24 @@ const searchJSON = JSON.stringify(
           }
           overlay.classList.add('active');
           results.innerHTML = '<div class="search-empty">搜索中...</div>';
-          timer = setTimeout(() => {
-            const matched = SEARCH_DATA.filter(s => matchSoftware(s, q));
+          timer = setTimeout(function() {
+            var matched = SEARCH_DATA.filter(function(s) { return matchSoftware(s, q); });
             render(matched);
           }, 150);
         });
 
-        document.addEventListener('click', (e) => {
+        document.addEventListener('click', function(e) {
           if (!overlay.contains(e.target) && e.target !== input) {
             overlay.classList.remove('active');
           }
         });
-        input.addEventListener('keydown', (e) => {
+        input.addEventListener('keydown', function(e) {
           if (e.key === 'Escape') {
             overlay.classList.remove('active');
             input.blur();
           }
         });
-      });
+      })();
     </script>
   </body>
 </html>
