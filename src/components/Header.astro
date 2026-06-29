@@ -14,19 +14,20 @@ function isActive(platform: string) {
     </a>
     <nav class="nav">
       <a href="/" class:list={['nav-link', { active: currentUrl === '/' }]}>首页</a>
+      <a href="/search/" class:list={['nav-link', { active: currentUrl.startsWith('/search') }]}>搜索</a>
       <a href="/browse/" class:list={['nav-link', { active: currentUrl.startsWith('/browse') }]}>全部软件</a>
       <a href="/ranking/" class:list={['nav-link', { active: currentUrl === '/ranking/' }]}>排行榜</a>
       <div class="nav-search">
-        <input
-          id="search-input"
-          type="text"
-          class="input search-input"
-          placeholder="🔍 搜索软件..."
-          autocomplete="off"
-        />
-        <div id="search-overlay" class="search-overlay">
-          <div id="search-results"></div>
-        </div>
+        <form id="search-form" action="/search/" method="get" style="display:contents">
+          <input
+            id="search-input"
+            name="q"
+            type="search"
+            class="input search-input"
+            placeholder="🔍 搜索软件..."
+            autocomplete="off"
+          />
+        </form>
       </div>
       <div class="nav-platforms">
         <a href="/" class:list={['platform-chip', { active: currentUrl === '/' }]}>全部</a>

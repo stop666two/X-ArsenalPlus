@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allSoftware = await getCollection('software');
+const searchIndex = allSoftware.map(s => ({
+  t: s.data.title,
+  u: `/software/${s.id.replace(/\.md$/, '')}/`,
+  d: s.data.description?.slice(0, 200) || '',
+  c: s.data.categories.join('、'),
+  g: s.data.tags || [],
+  v: s.data.version || '',
+  p: s.data.platforms || []
+}));
+---
+
+<BaseLayout title="搜索软件" description="X-ArsenalPlus 软件搜索">
+  <div class="search-page">
+    <div class="search-hero">
+      <h1>🔍 搜索软件</h1>
+      <div class="search-box">
+        <input
+          id="search-input"
+          type="text"
+          class="input"
+          placeholder="输入软件名称、分类或标签..."
+          autocomplete="off"
+          autofocus
+        />
+      </div>
+    </div>
+    <div id="search-info" class="search-info"></div>
+    <div class="software-grid" id="results"></div>
+    <div id="empty" class="empty-state" style="display:none">
+      <div class="icon">📭</div>
+      <p>未找到匹配的软件</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<script type="application/json" id="search-data">{JSON.stringify(searchIndex)}</script>
+
+<script is:inline>
+  var dataEl = document.getElementById('search-data');
+  var DATA = dataEl ? JSON.parse(dataEl.textContent || '[]') : [];
+
+  function match(item, query) {
+    var q = query.toLowerCase();
+    if (item.t.toLowerCase().indexOf(q) !== -1) return true;
+    if ((item.d || '').toLowerCase().indexOf(q) !== -1) return true;
+    if ((item.c || '').toLowerCase().indexOf(q) !== -1) return true;
+    for (var i = 0; i < item.g.length; i++) {
+      if (item.g[i].toLowerCase().indexOf(q) !== -1) return true;
+    }
+    return false;
+  }
+
+  function render(items, query) {
+    var grid = document.getElementById('results');
+    var empty = document.getElementById('empty');
+    var info = document.getElementById('search-info');
+
+    if (query) {
+      info.textContent = '搜索 "' + query + '" — 找到 ' + items.length + ' 个结果';
+    }
+
+    if (items.length === 0) {
+      grid.innerHTML = '';
+      empty.style.display = '';
+    } else {
+      empty.style.display = 'none';
+      var html = '';
+      for (var i = 0; i < items.length; i++) {
+        var s = items[i];
+        var platforms = '';
+        for (var j = 0; j < s.p.length; j++) {
+          platforms += '<span class="platform-tag">' + s.p[j] + '</span>';
+        }
+        html += '<article class="software-card">' +
+          '<div class="card-header">' +
+            '<div class="card-title-group">' +
+              '<h3 class="card-title"><a href="' + s.u + '">' + s.t + '</a></h3>' +
+            '</div>' +
+          '</div>' +
+          '<p class="card-desc">' + (s.d || '').slice(0, 180) + '</p>' +
+          '<div class="card-meta">' + platforms + '</div>' +
+          '<div class="card-footer">' +
+            '<a href="/software/' + s.u.split('/').pop() + '/" class="btn btn--sm card-action">详情 & 下载 →</a>' +
+          '</div>' +
+        '</article>';
+      }
+      grid.innerHTML = html;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var input = document.getElementById('search-input');
+    if (!input) return;
+
+    var url = new URL(location.href);
+    var q = url.searchParams.get('q') || '';
+
+    if (q) {
+      input.value = q;
+      var matched = [];
+      for (var i = 0; i < DATA.length; i++) {
+        if (match(DATA[i], q)) matched.push(DATA[i]);
+      }
+      render(matched, q);
+    }
+
+    var timer = null;
+    input.addEventListener('input', function() {
+      clearTimeout(timer);
+      var q = input.value.trim();
+      if (q.length < 1) {
+        render([], '');
+        history.replaceState(null, '', '/search/');
+        return;
+      }
+      history.replaceState(null, '', '/search/?q=' + encodeURIComponent(q));
+      timer = setTimeout(function() {
+        var matched = [];
+        for (var i = 0; i < DATA.length; i++) {
+          if (match(DATA[i], q)) matched.push(DATA[i]);
+        }
+        render(matched, q);
+      }, 200);
+    });
+  });
+</script>
+
+<style>
+  .search-page {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .search-hero {
+    text-align: center;
+    padding: 40px 0 32px;
+  }
+  .search-hero h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  .search-box {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .search-box .input {
+    font-size: 1.125rem;
+    padding: 14px 20px;
+    border-radius: var(--radius-lg);
+  }
+  .search-info {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    padding-left: 4px;
+  }
+  .software-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .software-grid { grid-template-columns: 1fr; }
+    .search-hero { padding: 24px 0 20px; }
+    .search-hero h1 { font-size: 1.5rem; }
+  }
+</style>

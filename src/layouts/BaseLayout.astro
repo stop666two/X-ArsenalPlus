@@ -1,7 +1,6 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getCollection } from 'astro:content';
 import '../styles/global.css';
 
 export interface Props {
@@ -9,16 +8,6 @@ export interface Props {
   description?: string;
 }
 const { title, description } = Astro.props;
-
-const allSoftware = await getCollection('software');
-const searchIndex = allSoftware.map(s => ({
-  t: s.data.title,
-  u: `/software/${s.id.replace(/\.md$/, '')}/`,
-  d: s.data.description?.slice(0, 180) || '',
-  c: s.data.categories.join(', '),
-  g: s.data.tags || [],
-  v: s.data.version || ''
-}));
 ---
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -38,7 +27,6 @@ const searchIndex = allSoftware.map(s => ({
     </main>
     <Footer />
     <button class="scroll-top-btn" id="scroll-top" aria-label="回到顶部" title="回到顶部">↑</button>
-    <script id="search-data" type="application/json">{JSON.stringify(searchIndex)}</script>
     <script is:inline>
       (function() {
         var saved = localStorage.getItem('theme');
@@ -76,107 +64,10 @@ const searchIndex = allSoftware.map(s => ({
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     </script>
-    <script is:inline>
-      var searchDataEl = document.getElementById('search-data');
-      var SEARCH_DATA = searchDataEl ? JSON.parse(searchDataEl.textContent || '[]') : [];
-
-      function matchSoftware(item, query) {
-        var q = query.toLowerCase();
-        if (item.t.toLowerCase().indexOf(q) !== -1) return true;
-        if ((item.d || '').toLowerCase().indexOf(q) !== -1) return true;
-        if ((item.c || '').toLowerCase().indexOf(q) !== -1) return true;
-        if ((item.v || '').toLowerCase().indexOf(q) !== -1) return true;
-        var tags = item.g || [];
-        for (var i = 0; i < tags.length; i++) {
-          if (tags[i].toLowerCase().indexOf(q) !== -1) return true;
-        }
-        return false;
-      }
-
-      document.addEventListener('DOMContentLoaded', function() {
-        var input = document.getElementById('search-input');
-        var results = document.getElementById('search-results');
-        var overlay = document.getElementById('search-overlay');
-        if (!input || !results || !overlay) return;
-
-        var timer = null;
-
-        function render(items) {
-          if (items.length === 0) {
-            results.innerHTML = '<div class="search-empty">未找到相关软件</div>';
-            return;
-          }
-          var html = '';
-          var max = items.length > 12 ? 12 : items.length;
-          for (var i = 0; i < max; i++) {
-            var s = items[i];
-            html += '<a class="search-item" href="' + s.u + '">' +
-              '<span class="search-item-title">' + s.t + '</span>' +
-              '<span class="search-item-desc">' + (s.d || '').slice(0, 120) + '</span>' +
-              '<span class="search-item-meta">' + (s.c || '') + '</span>' +
-              '</a>';
-          }
-          results.innerHTML = html;
-        }
-
-        input.addEventListener('input', function() {
-          clearTimeout(timer);
-          var q = input.value.trim();
-          if (q.length < 1) {
-            overlay.classList.remove('active');
-            return;
-          }
-          overlay.classList.add('active');
-          results.innerHTML = '<div class="search-empty">搜索中...</div>';
-          timer = setTimeout(function() {
-            var matched = [];
-            for (var i = 0; i < SEARCH_DATA.length; i++) {
-              if (matchSoftware(SEARCH_DATA[i], q)) matched.push(SEARCH_DATA[i]);
-            }
-            render(matched);
-          }, 150);
-        });
-
-        document.addEventListener('click', function(e) {
-          if (!overlay.contains(e.target) && e.target !== input) {
-            overlay.classList.remove('active');
-          }
-        });
-        input.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            overlay.classList.remove('active');
-            input.blur();
-          }
-        });
-      });
     </script>
   </body>
 </html>
 <style is:global>
-  .search-overlay {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin-top: 8px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-    max-height: 480px;
-    overflow-y: auto;
-    z-index: 100;
-  }
-  .search-overlay.active {
-    display: block;
-  }
-  .search-empty {
-    padding: 24px;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.875rem;
-  }
   .search-item {
     display: flex;
     flex-direction: column;
