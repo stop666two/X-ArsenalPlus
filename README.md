@@ -27,6 +27,7 @@ X-ArsenalPlus/
 │   │   ├── index.astro             # 首页（最新 / 热门 / 标签云）
 │   │   ├── browse/index.astro      # 全部软件（筛选 / 排序 / 分页）
 │   │   ├── ranking.astro           # 排行榜（全站 / 分平台 / 分分类）
+│   │   ├── search.astro             # 独立搜索页 /search/
 │   │   ├── software/[id].astro     # 软件详情页
 │   │   ├── category/[slug].astro   # 分类聚合页
 │   │   ├── platform/[slug].astro   # 平台聚合页
@@ -36,6 +37,8 @@ X-ArsenalPlus/
 ├── astro.config.mjs                # Astro 配置
 ├── tsconfig.json                   # TypeScript 配置
 ├── package.json                    # 依赖 + 脚本
+├── CONTRIBUTING.md                 # 开发速查
+├── ROADMAP.md                      # 未来规划
 └── LICENSE                         # MIT
 ```
 
@@ -44,10 +47,12 @@ X-ArsenalPlus/
 ## 功能
 
 - **286 款软件**，覆盖 **20 个分类**（每个软件可归属 1-3 个分类）
-- **多维度筛选**：按分类、平台、标签筛选，4 种排序（最新/热门/A-Z/Z-A），每页 24 条分页
-- **即时搜索**：内嵌 JSON 索引，全客户端毫秒级搜索，完整支持中文
-- **多源下载**：每个软件按平台提供多条下载链接，标记推荐来源
-- **社区驱动**：通过 GitHub Issues 模板提交新软件推荐
+- **独立搜索页**：/search/ 全量即时搜索，URL 实时同步
+- **多维度筛选**：按分类、平台、标签筛选，4 种排序，每页 24 条分页
+- **暗色/亮色主题**：Header 一键切换，localStorage 记忆
+- **多源下载**：每平台多条链接 + GitHub 镜像站（ghproxy.com）
+- **下载链接指向下载页**：非版本直链，不因更新失效
+- **社区驱动**：GitHub Issues 模板提交新软件
 
 ---
 
@@ -86,7 +91,7 @@ X-ArsenalPlus/
 | 语言 | TypeScript 5.7 | 严格模式类型检查 |
 | 样式 | 纯 CSS | 深色主题（GitHub 风格），CSS 自定义属性 |
 | 内容 | Markdown + Zod | 286 个 `.md` 文件，Zod Schema 校验 |
-| 搜索 | 内嵌 JSON 索引 | 构建时生成全量索引，客户端模糊匹配 |
+| 搜索 | 内嵌 JSON（base64） | 构建时编码，客户端 atob+TextDecoder 解码 |
 | 部署 | 静态托管 | 纯 HTML/CSS/JS，零服务端依赖 |
 
 ---
@@ -118,7 +123,6 @@ npm run build        # → dist/
 ```yaml
 ---
 title: "VLC Media Player"
-version: "3.6.4"
 date: 2026-06-29
 categories: ["多媒体播放"]          # 必填：1-3 个分类（数组）
 platforms: ["windows", "macos", "linux"]  # 必填：支持的平台
@@ -173,7 +177,6 @@ download_count: 65400
 | `platforms` | string[] | 是 | `windows` / `macos` / `linux` |
 | `description` | string | 是 | 软件介绍（支持多行） |
 | `downloads` | object | 是 | 按平台分组的下载链接 |
-| `version` | string | 否 | 版本号 |
 | `tags` | string[] | 否 | 英文小写标签，多词用连字符 |
 | `size_summary` | string | 否 | 安装包体积概述 |
 | `developer` | string | 否 | 开发者/团队名称 |
@@ -196,11 +199,11 @@ download_count: 65400
 
 ### 注意事项
 
-1. **图标/截图必须使用外链**：仓库不存储图片文件，推荐使用 GitHub raw / jsDelivr / Google Favicons
-2. **`platforms` 与 `downloads` 必须一致**：`platforms` 中列出的平台，`downloads` 下必须有对应条目
-3. **每平台至少一条下载链接**，通过 `recommended: true` 标记推荐项
-4. **`categories` 为数组**，同一个软件可归属多个分类（如 Docker Desktop → `["容器虚拟化", "开发环境"]`）
-5. **`download_count` 用于排序**，数值越大排名越靠前
+1. **图标/截图必须使用外链**：仓库不存储图片
+2. **下载链接指向下载页**：不直链版本号文件，GitHub 项目加 ghproxy 镜像
+3. **`platforms` 与 `downloads` 对应**：列出的平台必须有下载条目
+4. **每平台至少一条下载链接**，`recommended: true` 标记推荐
+5. **`categories` 为数组**，同一软件可归属多个分类
 
 ---
 
