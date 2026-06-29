@@ -42,7 +42,12 @@ const searchData = Buffer.from(JSON.stringify(
 </BaseLayout>
 
 <script is:inline>
-var DATA = JSON.parse(atob(document.getElementById('search-data').textContent.trim()));
+var b64 = document.getElementById('search-data').textContent.trim();
+var bytes = atob(b64);
+var arr = new Uint8Array(bytes.length);
+for (var i = 0; i < bytes.length; i++) { arr[i] = bytes.charCodeAt(i); }
+var jsonStr = new TextDecoder('utf-8').decode(arr);
+var DATA = JSON.parse(jsonStr);
 
   function match(item, query) {
     var q = query.toLowerCase();
