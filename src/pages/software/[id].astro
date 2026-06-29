@@ -24,7 +24,6 @@ const related = allSoftware
 
 function buildDescription(d: typeof data): string {
   const parts: string[] = [];
-  if (d.version) parts.push(`v${d.version}`);
   parts.push(d.developer || '');
   parts.push((d.categories || [''])[0]);
   if (d.description) parts.push(d.description.slice(0, 80));
@@ -49,7 +48,6 @@ function buildDescription(d: typeof data): string {
         )}
         <div class="detail-info">
           <h1 class="detail-title">{data.title}</h1>
-          {data.version && <span class="detail-version">v{data.version}</span>}
           <div class="detail-meta-row">
             {data.developer && <span class="meta-item">👤 {data.developer}</span>}
             {data.size_summary && <span class="meta-item">📦 {data.size_summary}</span>}
