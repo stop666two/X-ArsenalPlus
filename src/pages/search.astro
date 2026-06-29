@@ -3,15 +3,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const allSoftware = await getCollection('software');
-const searchIndex = allSoftware.map(s => ({
-  t: s.data.title,
-  u: `/software/${s.id.replace(/\.md$/, '')}/`,
-  d: s.data.description?.slice(0, 200) || '',
-  c: s.data.categories.join('、'),
-  g: s.data.tags || [],
-  v: s.data.version || '',
-  p: s.data.platforms || []
-}));
+const searchData = Buffer.from(JSON.stringify(
+  allSoftware.map(s => ({
+    t: s.data.title,
+    u: `/software/${s.id.replace(/\.md$/, '')}/`,
+    d: s.data.description?.slice(0, 200) || '',
+    c: s.data.categories.join('、'),
+    g: s.data.tags || [],
+    v: s.data.version || '',
+    p: s.data.platforms || []
+  }))
+)).toString('base64');
 ---
 
 <BaseLayout title="搜索软件" description="X-ArsenalPlus 软件搜索">
@@ -35,11 +37,12 @@ const searchIndex = allSoftware.map(s => ({
       <div class="icon">📭</div>
       <p>未找到匹配的软件</p>
     </div>
+    <div id="search-data" style="display:none">{searchData}</div>
   </div>
 </BaseLayout>
 
 <script is:inline>
-var DATA = {JSON.stringify(searchIndex).replace(/<\//g, '<\\/')};
+var DATA = JSON.parse(atob(document.getElementById('search-data').textContent.trim()));
 
   function match(item, query) {
     var q = query.toLowerCase();
