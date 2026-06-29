@@ -39,7 +39,7 @@ const searchIndex = allSoftware.map(s => ({
 </BaseLayout>
 
 <script is:inline>
-var DATA = {JSON.stringify(searchIndex)};
+var DATA = {JSON.stringify(searchIndex).replace(/<\//g, '<\\/')};
 
   function match(item, query) {
     var q = query.toLowerCase();
